@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ✏️ TÍTULO DA PÁGINA (aparece na aba do navegador) -->
+  <title>CanisStore — Camisas de Time</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════════════
+       HEADER
+       ✏️ Edite o nome da loja no .logo
+  ══════════════════════════════════════════════════════ -->
+  <header>
+    <div class="logo">Canis<span>Store</span></div>
+    <div class="header-right">
+      <a class="cart-btn" href="https://wa.me/5511999999999" target="_blank">
+        <!-- ✏️ Troque o número acima pelo seu WhatsApp -->
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+          <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.122 1.524 5.855L0 24l6.335-1.54A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-5.007-1.375l-.36-.214-3.73.978.994-3.633-.235-.374A9.795 9.795 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/>
+        </svg>
+        WhatsApp
+      </a>
+    </div>
+  </header>
+
+
+  <!-- ══════════════════════════════════════════════════════
+       HERO
+       ✏️ Edite o título, subtítulo e os pills abaixo
+  ══════════════════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero-badge">⚽ Seleções · Europeus · Brasileiros · Retrô</div>
+    <h1>Camisas de time<br><em>do seu jeito</em></h1>
+    <p>As melhores camisas nacionais e internacionais, entregues direto na sua porta.</p>
+    <div class="hero-pills">
+      <div class="pill">🚚 Frete rastreado</div>
+      <div class="pill">💳 PIX ou transferência</div>
+      <div class="pill">🔒 Compra segura</div>
+      <div class="pill">📦 Prazo: 20 a 40 dias</div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════
+       INFO BAR
+       ✏️ Edite os itens de destaque
+  ══════════════════════════════════════════════════════ -->
+  <div class="info-bar">
+    <div class="info-item"><span class="icon">⚽</span> Mais de 20 opções</div>
+    <div class="info-item"><span class="icon">🏆</span> Seleções e grandes clubes</div>
+    <div class="info-item"><span class="icon">📲</span> Pedido pelo WhatsApp</div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════════════
+       MAIN — catálogo + formulário
+  ══════════════════════════════════════════════════════ -->
+  <div class="main">
+
+    <!-- COLUNA ESQUERDA: catálogo -->
+    <div class="catalog-col">
+
+      <div class="section-label">Filtrar por categoria</div>
+      <div class="filters">
+        <button class="filter-btn active" onclick="filtrar('todos', this)">Todos</button>
+        <button class="filter-btn" onclick="filtrar('selecao', this)">🌍 Seleções</button>
+        <button class="filter-btn" onclick="filtrar('europeu', this)">🏟️ Europeus</button>
+        <button class="filter-btn" onclick="filtrar('brasileiro', this)">🇧🇷 Brasileiros</button>
+        <button class="filter-btn" onclick="filtrar('retro', this)">⭐ Retrô</button>
+      </div>
+
+      <div class="section-label">Escolha sua camisa</div>
+      <div class="catalog" id="catalog">
+        <!-- produtos renderizados pelo script.js -->
+      </div>
+
+    </div>
+
+    <!-- COLUNA DIREITA: pedido -->
+    <div class="sidebar">
+      <div class="order-box" id="order-box">
+        <div class="order-header">🛒 Seu pedido</div>
+        <div class="order-body">
+
+          <!-- notice produto selecionado -->
+          <div class="selected-notice" id="selected-notice"></div>
+
+          <!-- tamanho -->
+          <div class="field">
+            <label>Tamanho</label>
+            <div class="sizes">
+              <button class="size-btn" onclick="escolherTamanho('P', this)">P</button>
+              <button class="size-btn" onclick="escolherTamanho('M', this)">M</button>
+              <button class="size-btn" onclick="escolherTamanho('G', this)">G</button>
+              <button class="size-btn" onclick="escolherTamanho('GG', this)">GG</button>
+              <button class="size-btn" onclick="escolherTamanho('XGG', this)">XGG</button>
+            </div>
+          </div>
+
+          <!-- quantidade -->
+          <div class="field">
+            <label>Quantidade</label>
+            <div class="qty-row">
+              <button class="qty-btn" onclick="mudarQtd(-1)">−</button>
+              <span class="qty-num" id="qty-num">1</span>
+              <button class="qty-btn" onclick="mudarQtd(1)">+</button>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- dados pessoais -->
+          <div class="field">
+            <label>Seu nome completo</label>
+            <input type="text" id="nome" placeholder="Ex: João Silva">
+          </div>
+
+          <div class="field">
+            <label>WhatsApp / Telefone</label>
+            <input type="text" id="telefone" placeholder="(11) 99999-9999">
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- endereço -->
+          <div class="field">
+            <label>CEP</label>
+            <input type="text" id="cep" placeholder="00000-000">
+          </div>
+
+          <div class="field">
+            <label>Rua e número</label>
+            <input type="text" id="rua" placeholder="Rua das Flores, 123">
+          </div>
+
+          <div class="field field-row">
+            <div>
+              <label>Cidade</label>
+              <input type="text" id="cidade" placeholder="São Paulo">
+            </div>
+            <div>
+              <label>Estado</label>
+              <input type="text" id="estado" placeholder="SP">
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Complemento (opcional)</label>
+            <input type="text" id="complemento" placeholder="Apto 4, Bloco B">
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- resumo -->
+          <div id="resumo">
+            <div class="summary-empty">👈 Selecione uma camisa ao lado</div>
+          </div>
+
+          <!-- botão whatsapp -->
+          <button class="whatsapp-btn" onclick="enviarWhatsApp()">
+            <svg viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+              <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.122 1.524 5.855L0 24l6.335-1.54A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-5.007-1.375l-.36-.214-3.73.978.994-3.633-.235-.374A9.795 9.795 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/>
+            </svg>
+            Finalizar pedido pelo WhatsApp
+          </button>
+
+          <p class="disclaimer">
+            Ao clicar você será direcionado ao WhatsApp para confirmar o pedido e receber as opções de pagamento via PIX.
+          </p>
+
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /main -->
+
+
+  <!-- ══════════════════════════════════════════════════════
+       FOOTER
+       ✏️ Edite o nome e o número do WhatsApp
+  ══════════════════════════════════════════════════════ -->
+  <footer>
+    <p>© 2025 <strong>CanisStore</strong> — Camisas de time pra quem é fiel</p>
+    <p style="margin-top: 6px;">
+      Dúvidas? <a href="https://wa.me/5511999999999" target="_blank">Fale no WhatsApp</a>
+      <!-- ✏️ Troque o número acima pelo seu -->
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
