@@ -1,0 +1,545 @@
+/* ============================================================
+   LOJA DE CAMISAS — style.css
+   ============================================================ */
+
+/* ── RESET & BASE ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: #0f0f0f;
+  color: #f0f0f0;
+  min-height: 100vh;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* ── HEADER ── */
+header {
+  background: #111;
+  border-bottom: 1px solid #222;
+  padding: 0 2rem;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+
+.logo span {
+  /* ── COR DO DESTAQUE DO LOGO ── */
+  color: #f5c518;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cart-btn {
+  background: none;
+  border: 1px solid #333;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: inherit;
+  transition: border-color 0.15s;
+}
+.cart-btn:hover { border-color: #555; }
+
+.cart-count {
+  background: #f5c518;
+  color: #000;
+  font-size: 11px;
+  font-weight: 700;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── HERO ── */
+.hero {
+  /* ── COR DO FUNDO DO HERO ── */
+  background: linear-gradient(135deg, #111 0%, #1a1a1a 100%);
+  padding: 5rem 2rem 4rem;
+  text-align: center;
+  border-bottom: 1px solid #1e1e1e;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(245, 197, 24, 0.1);
+  border: 1px solid rgba(245, 197, 24, 0.3);
+  color: #f5c518;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 5px 16px;
+  border-radius: 20px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.hero h1 em {
+  font-style: normal;
+  /* ── COR DO DESTAQUE DO TÍTULO ── */
+  color: #f5c518;
+}
+
+.hero p {
+  color: #777;
+  font-size: 1rem;
+  max-width: 420px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+
+.hero-pills {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.pill {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid #2a2a2a;
+  color: #888;
+  font-size: 12px;
+  padding: 7px 16px;
+  border-radius: 20px;
+}
+
+/* ── INFO BAR ── */
+.info-bar {
+  background: #111;
+  border-bottom: 1px solid #1e1e1e;
+  padding: 0.75rem 2rem;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #666;
+  font-weight: 500;
+}
+
+.info-item .icon { font-size: 1rem; }
+
+/* ── MAIN LAYOUT ── */
+.main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (max-width: 820px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    order: -1;
+  }
+}
+
+/* ── SECTION LABEL ── */
+.section-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: #555;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+/* ── FILTROS ── */
+.filters {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.filter-btn {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  color: #888;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.15s;
+}
+
+.filter-btn:hover { border-color: #444; color: #ccc; }
+
+.filter-btn.active {
+  background: #f5c518;
+  color: #000;
+  border-color: #f5c518;
+  font-weight: 700;
+}
+
+/* ── CATÁLOGO ── */
+.catalog {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.shirt-card {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 14px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.15s;
+  position: relative;
+  user-select: none;
+}
+
+.shirt-card:hover {
+  border-color: #444;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+
+.shirt-card.selected {
+  border: 2px solid #f5c518;
+  background: #1e1c14;
+}
+
+.shirt-img {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #222;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+}
+
+.shirt-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+.check-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #f5c518;
+  color: #000;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 700;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.shirt-card.selected .check-badge {
+  display: flex;
+}
+
+.shirt-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: #eee;
+  margin-bottom: 2px;
+}
+
+.shirt-league {
+  font-size: 11px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.shirt-price {
+  font-size: 15px;
+  font-weight: 800;
+  color: #f5c518;
+}
+
+/* ── SIDEBAR ── */
+.sidebar {
+  position: sticky;
+  top: 80px;
+}
+
+.order-box {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.order-header {
+  background: #f5c518;
+  color: #000;
+  padding: 1rem 1.25rem;
+  font-size: 14px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.order-body { padding: 1.25rem; }
+
+/* ── FORM ── */
+.field {
+  margin-bottom: 14px;
+}
+
+.field label {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+.field input {
+  width: 100%;
+  padding: 10px 12px;
+  background: #111;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  color: #eee;
+  font-size: 13px;
+  font-family: inherit;
+  transition: border-color 0.15s;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: #f5c518;
+}
+
+.field input::placeholder { color: #444; }
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+/* ── TAMANHOS ── */
+.sizes {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.size-btn {
+  background: #111;
+  border: 1px solid #2a2a2a;
+  color: #888;
+  font-size: 12px;
+  font-weight: 700;
+  width: 46px;
+  height: 42px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.size-btn:hover { border-color: #555; color: #ccc; }
+
+.size-btn.active {
+  background: #f5c518;
+  color: #000;
+  border-color: #f5c518;
+}
+
+/* ── QUANTIDADE ── */
+.qty-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.qty-btn {
+  background: #111;
+  border: 1px solid #2a2a2a;
+  color: #eee;
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  font-size: 20px;
+  cursor: pointer;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+  line-height: 1;
+}
+
+.qty-btn:hover { border-color: #555; }
+
+.qty-num {
+  font-size: 18px;
+  font-weight: 700;
+  min-width: 24px;
+  text-align: center;
+  color: #fff;
+}
+
+/* ── DIVIDER ── */
+.divider {
+  height: 1px;
+  background: #222;
+  margin: 1.1rem 0;
+}
+
+/* ── RESUMO ── */
+.summary-empty {
+  text-align: center;
+  color: #444;
+  font-size: 13px;
+  padding: 1.25rem 0;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.summary-row span:last-child { color: #aaa; }
+
+.summary-row.total {
+  font-size: 16px;
+  font-weight: 800;
+  color: #fff;
+  border-top: 1px solid #222;
+  padding-top: 10px;
+  margin-top: 6px;
+}
+
+.summary-row.total span:last-child { color: #f5c518; }
+
+/* ── BOTÃO WHATSAPP ── */
+.whatsapp-btn {
+  width: 100%;
+  padding: 15px;
+  background: #25D366;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.15s;
+  margin-top: 1rem;
+}
+
+.whatsapp-btn:hover { background: #1ebe5d; }
+.whatsapp-btn:active { transform: scale(0.98); }
+
+.whatsapp-btn svg {
+  width: 22px;
+  height: 22px;
+  fill: #fff;
+  flex-shrink: 0;
+}
+
+.disclaimer {
+  font-size: 11px;
+  color: #444;
+  text-align: center;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+/* ── NOTICE PRODUTO SELECIONADO ── */
+.selected-notice {
+  background: rgba(245, 197, 24, 0.08);
+  border: 1px solid rgba(245, 197, 24, 0.2);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 12px;
+  color: #f5c518;
+  margin-bottom: 1rem;
+  display: none;
+}
+
+.selected-notice.visible { display: block; }
+
+/* ── FOOTER ── */
+footer {
+  background: #111;
+  border-top: 1px solid #1e1e1e;
+  padding: 2rem;
+  text-align: center;
+  color: #444;
+  font-size: 12px;
+  margin-top: 2rem;
+}
+
+footer strong { color: #f5c518; }
+
+footer a { color: #25D366; }
