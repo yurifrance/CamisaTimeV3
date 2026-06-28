@@ -41,7 +41,7 @@ const PRODUTOS = [
     cat: "selecao",
     img: "imagens/brasil.jpeg",   /* ✏️ coloque o caminho da sua imagem */
     emoji: "🇧🇷",
-    preco: 1559
+    preco: 30
   },
   {
     // id: 2,
@@ -148,28 +148,28 @@ const PRODUTOS = [
   /* ── TIMES BRASILEIROS ────────────────────────────────── */
   {
     id: 13,
-    nome: "Flamengo",
+    nome: "Santos",
     liga: "Brasileirão",
     cat: "brasileiro",
-    img: "imagens/flamengo.jpeg",
+    img: "imagens/santos.jpeg",
     emoji: "🔴",
-    preco: 139
+    preco: 30
   },
   {
     id: 14,
-    nome: "Corinthians",
+    nome: "Internacional",
     liga: "Brasileirão",
     cat: "brasileiro",
-    img: "imagens/corinthians.jpeg",
+    img: "imagens/inter.jpeg",
     emoji: "⚫",
     preco: 139
   },
   {
     id: 15,
-    nome: "Palmeiras",
+    nome: "Vasco",
     liga: "Brasileirão",
     cat: "brasileiro",
-    img: "imagens/palmeiras.jpeg",
+    img: "imagens/vasco.jpeg",
     emoji: "💚",
     preco: 139
   },
@@ -292,7 +292,7 @@ function renderCatalog() {
         <div class="shirt-img">${imgContent}</div>
         <div class="shirt-name">${p.nome}</div>
         <div class="shirt-league">${p.liga}</div>
-        <div class="shirt-price">R$ ${p.preco}</div>
+        <div class="shirt-price">€ ${p.preco}</div>
       </div>
     `;
   }).join("");
