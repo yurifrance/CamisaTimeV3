@@ -44,13 +44,13 @@ const PRODUTOS = [
     preco: 1559
   },
   {
-    id: 2,
-    nome: "Argentina",
-    liga: "Seleção Argentina",
-    cat: "selecao",
-    img: "imagens/argentina.jpeg",
-    emoji: "🇦🇷",
-    preco: 149
+    // id: 2,
+    // nome: "Argentina",
+    // liga: "Seleção Argentina",
+    // cat: "selecao",
+    // img: "imagens/argentina.jpeg",
+    // emoji: "🇦🇷",
+    // preco: 149
   },
   {
     id: 3,
