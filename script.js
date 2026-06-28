@@ -10,11 +10,11 @@
 /* ── SEU NÚMERO DO WHATSAPP ──────────────────────────────────
    Formato: código do país + DDD + número (sem espaços ou símbolos)
    Exemplo Brasil: 5511999999999                               */
-const WHATSAPP = "5511999999999";
+const WHATSAPP = "351932144202";
 
 /* ── NOME DA LOJA ────────────────────────────────────────────
    Aparece na mensagem enviada ao WhatsApp                     */
-const NOME_LOJA = "CanisStore";
+const NOME_LOJA = "PacMan Ruivo Store";
 
 
 /* ══════════════════════════════════════════════════════════════
@@ -41,7 +41,7 @@ const PRODUTOS = [
     cat: "selecao",
     img: "imagens/brasil.jpeg",   /* ✏️ coloque o caminho da sua imagem */
     emoji: "🇧🇷",
-    preco: 149
+    preco: 1559
   },
   {
     id: 2,
