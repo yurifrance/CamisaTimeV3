@@ -7,256 +7,50 @@
    ✏️  CONFIGURAÇÕES — EDITE AQUI
    ══════════════════════════════════════════════════════════════ */
 
-/* ── SEU NÚMERO DO WHATSAPP ──────────────────────────────────
-   Formato: código do país + DDD + número (sem espaços ou símbolos)
-   Exemplo Brasil: 5511999999999                               */
-const WHATSAPP = "351932144202";
-
-/* ── NOME DA LOJA ────────────────────────────────────────────
-   Aparece na mensagem enviada ao WhatsApp                     */
-const NOME_LOJA = "PacMan Ruivo Store";
+const WHATSAPP = "5511999999999"; /* ✏️ seu número com DDI+DDD */
+const NOME_LOJA = "CanisStore";   /* ✏️ nome da sua loja       */
 
 
 /* ══════════════════════════════════════════════════════════════
    ✏️  PRODUTOS — EDITE AQUI
    ══════════════════════════════════════════════════════════════
-   Campos de cada produto:
-   - id:      número único (não repetir)
-   - nome:    nome que aparece no card
-   - liga:    subtítulo (ex: "La Liga", "Seleção", "Retrô")
-   - cat:     categoria do filtro — use exatamente:
-              "selecao" | "europeu" | "brasileiro" | "retro"
-   - img:     caminho da imagem (ex: "imagens/flamengo.jpeg")
-              OU deixe "" para mostrar o emoji no lugar
-   - emoji:   aparece se não tiver imagem (ex: "🇧🇷")
-   - preco:   número sem R$ (ex: 149)
+   - img:   caminho da imagem (ex: "imagens/brasil.jpeg")
+            deixe "" para usar o emoji como substituto
+   - cat:   "selecao" | "europeu" | "brasileiro" | "retro"
    ══════════════════════════════════════════════════════════════ */
 const PRODUTOS = [
 
-  /* ── SELEÇÕES ─────────────────────────────────────────── */
-  {
-    id: 1,
-    nome: "Brasil",
-    liga: "Seleção Brasileira",
-    cat: "selecao",
-    img: "imagens/brasil.jpeg",   /* ✏️ coloque o caminho da sua imagem */
-    emoji: "🇧🇷",
-    preco: 30
-  },
-  {
-    // id: 2,
-    // nome: "Argentina",
-    // liga: "Seleção Argentina",
-    // cat: "selecao",
-    // img: "imagens/argentina.jpeg",
-    // emoji: "🇦🇷",
-    // preco: 149
-  },
-  {
-    id: 3,
-    nome: "Portugal",
-    liga: "Seleção Portuguesa",
-    cat: "selecao",
-    img: "imagens/portugal.jpeg",
-    emoji: "🇵🇹",
-    preco: 149
-  },
-  {
-    id: 4,
-    nome: "França",
-    liga: "Seleção Francesa",
-    cat: "selecao",
-    img: "imagens/franca.jpeg",
-    emoji: "🇫🇷",
-    preco: 149
-  },
-  {
-    id: 5,
-    nome: "Alemanha",
-    liga: "Seleção Alemã",
-    cat: "selecao",
-    img: "imagens/alemanha.jpeg",
-    emoji: "🇩🇪",
-    preco: 149
-  },
-  {
-    id: 6,
-    nome: "Espanha",
-    liga: "Seleção Espanhola",
-    cat: "selecao",
-    img: "imagens/espanha.jpeg",
-    emoji: "🇪🇸",
-    preco: 149
-  },
+  /* ── SELEÇÕES ── */
+  { id:1,  nome:"Brasil",            liga:"Seleção Brasileira",   cat:"selecao",    img:"imagens/brasil.jpeg",            emoji:"🇧🇷", preco:149 },
+  { id:2,  nome:"Argentina",         liga:"Seleção Argentina",    cat:"selecao",    img:"imagens/argentina.jpeg",         emoji:"🇦🇷", preco:149 },
+  { id:3,  nome:"Portugal",          liga:"Seleção Portuguesa",   cat:"selecao",    img:"imagens/portugal.jpeg",          emoji:"🇵🇹", preco:149 },
+  { id:4,  nome:"França",            liga:"Seleção Francesa",     cat:"selecao",    img:"imagens/franca.jpeg",            emoji:"🇫🇷", preco:149 },
+  { id:5,  nome:"Alemanha",          liga:"Seleção Alemã",        cat:"selecao",    img:"imagens/alemanha.jpeg",          emoji:"🇩🇪", preco:149 },
+  { id:6,  nome:"Espanha",           liga:"Seleção Espanhola",    cat:"selecao",    img:"imagens/espanha.jpeg",           emoji:"🇪🇸", preco:149 },
 
-  /* ── TIMES EUROPEUS ───────────────────────────────────── */
-  {
-    id: 7,
-    nome: "Real Madrid",
-    liga: "La Liga",
-    cat: "europeu",
-    img: "imagens/real-madrid.jpeg",
-    emoji: "⚪",
-    preco: 159
-  },
-  {
-    id: 8,
-    nome: "Barcelona",
-    liga: "La Liga",
-    cat: "europeu",
-    img: "imagens/barcelona.jpeg",
-    emoji: "🔵",
-    preco: 159
-  },
-  {
-    id: 9,
-    nome: "Manchester United",
-    liga: "Premier League",
-    cat: "europeu",
-    img: "imagens/manchester-united.jpeg",
-    emoji: "🔴",
-    preco: 159
-  },
-  {
-    id: 10,
-    nome: "Manchester City",
-    liga: "Premier League",
-    cat: "europeu",
-    img: "imagens/manchester-city.jpeg",
-    emoji: "🩵",
-    preco: 159
-  },
-  {
-    id: 11,
-    nome: "PSG",
-    liga: "Ligue 1",
-    cat: "europeu",
-    img: "imagens/psg.jpeg",
-    emoji: "🗼",
-    preco: 159
-  },
-  {
-    id: 12,
-    nome: "Juventus",
-    liga: "Serie A",
-    cat: "europeu",
-    img: "imagens/juventus.jpeg",
-    emoji: "⚫",
-    preco: 159
-  },
+  /* ── EUROPEUS ── */
+  { id:7,  nome:"Real Madrid",       liga:"La Liga",              cat:"europeu",    img:"imagens/real-madrid.jpeg",       emoji:"⚪", preco:159 },
+  { id:8,  nome:"Barcelona",         liga:"La Liga",              cat:"europeu",    img:"imagens/barcelona.jpeg",         emoji:"🔵", preco:159 },
+  { id:9,  nome:"Manchester United", liga:"Premier League",       cat:"europeu",    img:"imagens/manchester-united.jpeg", emoji:"🔴", preco:159 },
+  { id:10, nome:"Manchester City",   liga:"Premier League",       cat:"europeu",    img:"imagens/manchester-city.jpeg",   emoji:"🩵", preco:159 },
+  { id:11, nome:"PSG",               liga:"Ligue 1",              cat:"europeu",    img:"imagens/psg.jpeg",               emoji:"🗼", preco:159 },
+  { id:12, nome:"Juventus",          liga:"Serie A",              cat:"europeu",    img:"imagens/juventus.jpeg",          emoji:"⚫", preco:159 },
 
-  /* ── TIMES BRASILEIROS ────────────────────────────────── */
-  {
-    id: 13,
-    nome: "Santos",
-    liga: "Brasileirão",
-    cat: "brasileiro",
-    img: "imagens/santos.jpeg",
-    emoji: "🔴",
-    preco: 30
-  },
-  {
-    id: 14,
-    nome: "Internacional",
-    liga: "Brasileirão",
-    cat: "brasileiro",
-    img: "imagens/inter.jpeg",
-    emoji: "⚫",
-    preco: 139
-  },
-  {
-    id: 15,
-    nome: "Vasco",
-    liga: "Brasileirão",
-    cat: "brasileiro",
-    img: "imagens/vasco.jpeg",
-    emoji: "💚",
-    preco: 139
-  },
-  {
-    id: 16,
-    nome: "São Paulo",
-    liga: "Brasileirão",
-    cat: "brasileiro",
-    img: "imagens/sao-paulo.jpeg",
-    emoji: "🔺",
-    preco: 139
-  },
-  {
-    id: 17,
-    nome: "Grêmio",
-    liga: "Brasileirão",
-    cat: "brasileiro",
-    img: "imagens/gremio.jpeg",
-    emoji: "💙",
-    preco: 139
-  },
-  {
-    id: 18,
-    nome: "Cruzeiro",
-    liga: "Brasileirão",
-    cat: "brasileiro",
-    img: "imagens/cruzeiro.jpeg",
-    emoji: "🌟",
-    preco: 139
-  },
+  /* ── BRASILEIROS ── */
+  { id:13, nome:"Flamengo",          liga:"Brasileirão",          cat:"brasileiro", img:"imagens/flamengo.jpeg",          emoji:"🔴", preco:139 },
+  { id:14, nome:"Corinthians",       liga:"Brasileirão",          cat:"brasileiro", img:"imagens/corinthians.jpeg",       emoji:"⚫", preco:139 },
+  { id:15, nome:"Palmeiras",         liga:"Brasileirão",          cat:"brasileiro", img:"imagens/palmeiras.jpeg",         emoji:"💚", preco:139 },
+  { id:16, nome:"São Paulo",         liga:"Brasileirão",          cat:"brasileiro", img:"imagens/sao-paulo.jpeg",         emoji:"🔺", preco:139 },
+  { id:17, nome:"Grêmio",            liga:"Brasileirão",          cat:"brasileiro", img:"imagens/gremio.jpeg",            emoji:"💙", preco:139 },
+  { id:18, nome:"Cruzeiro",          liga:"Brasileirão",          cat:"brasileiro", img:"imagens/cruzeiro.jpeg",          emoji:"🌟", preco:139 },
 
-  /* ── RETRÔ ────────────────────────────────────────────── */
-  {
-    id: 19,
-    nome: "Brasil 1970",
-    liga: "Retrô — Seleção",
-    cat: "retro",
-    img: "imagens/brasil-1970.jpeg",
-    emoji: "🏆",
-    preco: 169
-  },
-  {
-    id: 20,
-    nome: "Brasil 1994",
-    liga: "Retrô — Seleção",
-    cat: "retro",
-    img: "imagens/brasil-1994.jpeg",
-    emoji: "🥇",
-    preco: 169
-  },
-  {
-    id: 21,
-    nome: "Italia 1982",
-    liga: "Retrô — Seleção",
-    cat: "retro",
-    img: "imagens/italia-1982.jpeg",
-    emoji: "🇮🇹",
-    preco: 169
-  },
-  {
-    id: 22,
-    nome: "Argentina 1986",
-    liga: "Retrô — Seleção",
-    cat: "retro",
-    img: "imagens/argentina-1986.jpeg",
-    emoji: "⭐",
-    preco: 169
-  },
-  {
-    id: 23,
-    nome: "Ajax 1995",
-    liga: "Retrô — Clube",
-    cat: "retro",
-    img: "imagens/ajax-1995.jpeg",
-    emoji: "🏴",
-    preco: 169
-  },
-  {
-    id: 24,
-    nome: "Barcelona 1999",
-    liga: "Retrô — Clube",
-    cat: "retro",
-    img: "imagens/barcelona-1999.jpeg",
-    emoji: "🏅",
-    preco: 169
-  },
-
+  /* ── RETRÔ ── */
+  { id:19, nome:"Brasil 1970",       liga:"Retrô — Seleção",      cat:"retro",      img:"imagens/brasil-1970.jpeg",       emoji:"🏆", preco:169 },
+  { id:20, nome:"Brasil 1994",       liga:"Retrô — Seleção",      cat:"retro",      img:"imagens/brasil-1994.jpeg",       emoji:"🥇", preco:169 },
+  { id:21, nome:"Italia 1982",       liga:"Retrô — Seleção",      cat:"retro",      img:"imagens/italia-1982.jpeg",       emoji:"🇮🇹", preco:169 },
+  { id:22, nome:"Argentina 1986",    liga:"Retrô — Seleção",      cat:"retro",      img:"imagens/argentina-1986.jpeg",    emoji:"⭐", preco:169 },
+  { id:23, nome:"Ajax 1995",         liga:"Retrô — Clube",        cat:"retro",      img:"imagens/ajax-1995.jpeg",         emoji:"🏴", preco:169 },
+  { id:24, nome:"Barcelona 1999",    liga:"Retrô — Clube",        cat:"retro",      img:"imagens/barcelona-1999.jpeg",    emoji:"🏅", preco:169 },
 ];
 
 
@@ -264,128 +58,237 @@ const PRODUTOS = [
    LÓGICA — não precisa editar abaixo
    ══════════════════════════════════════════════════════════════ */
 
-let estado = {
-  selecionado: null,
-  tamanho: null,
-  qtd: 1,
-  filtro: "todos"
-};
+/* ── ESTADO ── */
+let filtroAtivo = "todos";
+let carrinho = []; /* [ { produto, tamanho, qtd } ] */
 
-/* ── RENDERIZAR CATÁLOGO ── */
+/* ── MODAL ── */
+let modalProduto = null;
+let modalTamanho = null;
+let modalQtd = 1;
+
+/* ────────────────────────────────
+   CATÁLOGO
+──────────────────────────────── */
 function renderCatalog() {
-  const lista = estado.filtro === "todos"
+  const lista = filtroAtivo === "todos"
     ? PRODUTOS
-    : PRODUTOS.filter(p => p.cat === estado.filtro);
+    : PRODUTOS.filter(p => p.cat === filtroAtivo);
 
-  const el = document.getElementById("catalog");
-
-  el.innerHTML = lista.map(p => {
-    const isSelected = estado.selecionado && estado.selecionado.id === p.id;
+  document.getElementById("catalog").innerHTML = lista.map(p => {
+    const noCart = carrinho.some(i => i.produto.id === p.id);
     const imgContent = p.img
-      ? `<img src="${p.img}" alt="${p.nome}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-         <span class="emoji-fallback" style="display:none; font-size:2.5rem; width:100%; height:100%; align-items:center; justify-content:center;">${p.emoji}</span>`
+      ? `<img src="${p.img}" alt="${p.nome}"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+         <span style="display:none;font-size:2.5rem;width:100%;height:100%;align-items:center;justify-content:center;">${p.emoji}</span>`
       : `<span style="font-size:2.5rem;">${p.emoji}</span>`;
 
     return `
-      <div class="shirt-card ${isSelected ? 'selected' : ''}" onclick="selecionarProduto(${p.id})">
-        <div class="check-badge">✓</div>
+      <div class="shirt-card ${noCart ? 'in-cart' : ''}" onclick="abrirModal(${p.id})">
+        ${noCart ? '<div class="in-cart-badge">✓ No carrinho</div>' : ''}
         <div class="shirt-img">${imgContent}</div>
         <div class="shirt-name">${p.nome}</div>
         <div class="shirt-league">${p.liga}</div>
-        <div class="shirt-price">€ ${p.preco}</div>
-      </div>
-    `;
+        <div class="shirt-price">R$ ${p.preco}</div>
+        <button class="add-btn">${noCart ? '+ Adicionar novamente' : '+ Adicionar ao carrinho'}</button>
+      </div>`;
   }).join("");
 }
 
-/* ── FILTRO ── */
 function filtrar(cat, btn) {
-  estado.filtro = cat;
+  filtroAtivo = cat;
   document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
   btn.classList.add("active");
   renderCatalog();
 }
 
-/* ── SELECIONAR PRODUTO ── */
-function selecionarProduto(id) {
-  estado.selecionado = PRODUTOS.find(p => p.id === id);
-  renderCatalog();
+/* ────────────────────────────────
+   MODAL — selecionar tamanho/qtd
+──────────────────────────────── */
+function abrirModal(id) {
+  modalProduto = PRODUTOS.find(p => p.id === id);
+  modalTamanho = null;
+  modalQtd = 1;
 
-  const notice = document.getElementById("selected-notice");
-  notice.textContent = `✅ Selecionado: ${estado.selecionado.nome}`;
-  notice.classList.add("visible");
+  const imgContent = modalProduto.img
+    ? `<img src="${modalProduto.img}" alt="${modalProduto.nome}"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+       <span style="display:none;font-size:3rem;align-items:center;justify-content:center;width:100%;height:100%;">${modalProduto.emoji}</span>`
+    : `<span style="font-size:3rem;">${modalProduto.emoji}</span>`;
 
-  atualizarResumo();
+  document.getElementById("modal-img").innerHTML = imgContent;
+  document.getElementById("modal-nome").textContent = modalProduto.nome;
+  document.getElementById("modal-liga").textContent = modalProduto.liga;
+  document.getElementById("modal-preco").textContent = `R$ ${modalProduto.preco}`;
+  document.getElementById("modal-qty-num").textContent = 1;
 
-  if (window.innerWidth < 820) {
-    document.getElementById("order-box").scrollIntoView({ behavior: "smooth" });
-  }
+  document.querySelectorAll(".modal-size-btn").forEach(b => b.classList.remove("active"));
+
+  document.getElementById("modal").classList.add("open");
+  document.body.style.overflow = "hidden";
 }
 
-/* ── TAMANHO ── */
-function escolherTamanho(tam, btn) {
-  estado.tamanho = tam;
-  document.querySelectorAll(".size-btn").forEach(b => b.classList.remove("active"));
+function fecharModal() {
+  document.getElementById("modal").classList.remove("open");
+  document.body.style.overflow = "";
+}
+
+function modalEscolherTamanho(tam, btn) {
+  modalTamanho = tam;
+  document.querySelectorAll(".modal-size-btn").forEach(b => b.classList.remove("active"));
   btn.classList.add("active");
-  atualizarResumo();
 }
 
-/* ── QUANTIDADE ── */
-function mudarQtd(delta) {
-  estado.qtd = Math.max(1, estado.qtd + delta);
-  document.getElementById("qty-num").textContent = estado.qtd;
-  atualizarResumo();
+function modalMudarQtd(delta) {
+  modalQtd = Math.max(1, modalQtd + delta);
+  document.getElementById("modal-qty-num").textContent = modalQtd;
 }
 
-/* ── RESUMO ── */
-function atualizarResumo() {
-  const el = document.getElementById("resumo");
-  if (!estado.selecionado) {
-    el.innerHTML = '<div class="summary-empty">👈 Selecione uma camisa ao lado</div>';
+function adicionarAoCarrinho() {
+  if (!modalTamanho) {
+    alert("Selecione um tamanho.");
     return;
   }
-  const total = estado.selecionado.preco * estado.qtd;
-  el.innerHTML = `
-    <div class="summary-row"><span>Camisa</span><span>${estado.selecionado.nome}</span></div>
-    <div class="summary-row"><span>Liga</span><span>${estado.selecionado.liga}</span></div>
-    <div class="summary-row"><span>Tamanho</span><span>${estado.tamanho || "—"}</span></div>
-    <div class="summary-row"><span>Quantidade</span><span>${estado.qtd}x</span></div>
-    <div class="summary-row total"><span>Total</span><span>R$ ${total}</span></div>
-  `;
+  carrinho.push({ produto: modalProduto, tamanho: modalTamanho, qtd: modalQtd });
+  fecharModal();
+  renderCatalog();
+  renderCarrinho();
+  atualizarContadorHeader();
+  abrirCarrinho();
 }
 
-/* ── ENVIAR WHATSAPP ── */
+/* ────────────────────────────────
+   DRAWER DO CARRINHO
+──────────────────────────────── */
+function abrirCarrinho() {
+  document.getElementById("cart-drawer").classList.add("open");
+  document.getElementById("cart-overlay").classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+
+function fecharCarrinho() {
+  document.getElementById("cart-drawer").classList.remove("open");
+  document.getElementById("cart-overlay").classList.remove("open");
+  document.body.style.overflow = "";
+}
+
+function removerItem(idx) {
+  carrinho.splice(idx, 1);
+  renderCatalog();
+  renderCarrinho();
+  atualizarContadorHeader();
+}
+
+function mudarQtdCarrinho(idx, delta) {
+  carrinho[idx].qtd = Math.max(1, carrinho[idx].qtd + delta);
+  renderCarrinho();
+  atualizarContadorHeader();
+}
+
+function atualizarContadorHeader() {
+  const total = carrinho.reduce((s, i) => s + i.qtd, 0);
+  const badge = document.getElementById("cart-count");
+  badge.textContent = total;
+  badge.style.display = total > 0 ? "flex" : "none";
+}
+
+function renderCarrinho() {
+  const el = document.getElementById("cart-items");
+  const btnFinalizar = document.getElementById("btn-finalizar");
+  const resumoEl = document.getElementById("cart-total-row");
+
+  if (carrinho.length === 0) {
+    el.innerHTML = '<div class="cart-empty">Seu carrinho está vazio.<br>Adicione camisas para continuar.</div>';
+    btnFinalizar.style.display = "none";
+    resumoEl.style.display = "none";
+    return;
+  }
+
+  const totalGeral = carrinho.reduce((s, i) => s + i.produto.preco * i.qtd, 0);
+
+  el.innerHTML = carrinho.map((item, idx) => {
+    const imgContent = item.produto.img
+      ? `<img src="${item.produto.img}" alt="${item.produto.nome}"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+         <span style="display:none;font-size:1.5rem;align-items:center;justify-content:center;width:100%;height:100%;">${item.produto.emoji}</span>`
+      : `<span style="font-size:1.5rem;">${item.produto.emoji}</span>`;
+
+    return `
+      <div class="cart-item">
+        <div class="cart-item-img">${imgContent}</div>
+        <div class="cart-item-info">
+          <div class="cart-item-nome">${item.produto.nome}</div>
+          <div class="cart-item-sub">${item.produto.liga} · Tam. ${item.tamanho}</div>
+          <div class="cart-item-preco">R$ ${item.produto.preco * item.qtd}</div>
+        </div>
+        <div class="cart-item-actions">
+          <div class="cart-qty-row">
+            <button class="cart-qty-btn" onclick="mudarQtdCarrinho(${idx}, -1)">−</button>
+            <span class="cart-qty-num">${item.qtd}</span>
+            <button class="cart-qty-btn" onclick="mudarQtdCarrinho(${idx}, 1)">+</button>
+          </div>
+          <button class="cart-remove-btn" onclick="removerItem(${idx})">🗑️</button>
+        </div>
+      </div>`;
+  }).join("");
+
+  resumoEl.innerHTML = `
+    <div class="cart-total-line">
+      <span>${carrinho.reduce((s,i) => s+i.qtd, 0)} item(s)</span>
+      <span>R$ ${totalGeral}</span>
+    </div>`;
+  resumoEl.style.display = "block";
+  btnFinalizar.style.display = "block";
+}
+
+/* ────────────────────────────────
+   CHECKOUT — DADOS + WHATSAPP
+──────────────────────────────── */
+function abrirCheckout() {
+  if (carrinho.length === 0) return;
+  fecharCarrinho();
+  document.getElementById("checkout-drawer").classList.add("open");
+  document.getElementById("cart-overlay").classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+
+function fecharCheckout() {
+  document.getElementById("checkout-drawer").classList.remove("open");
+  document.getElementById("cart-overlay").classList.remove("open");
+  document.body.style.overflow = "";
+}
+
+function voltarParaCarrinho() {
+  document.getElementById("checkout-drawer").classList.remove("open");
+  abrirCarrinho();
+}
+
 function enviarWhatsApp() {
-  if (!estado.selecionado) {
-    alert("Por favor, selecione uma camisa.");
-    return;
-  }
-  if (!estado.tamanho) {
-    alert("Por favor, selecione um tamanho.");
-    return;
-  }
+  const nome   = document.getElementById("nome").value.trim();
+  const tel    = document.getElementById("telefone").value.trim();
+  const cep    = document.getElementById("cep").value.trim();
+  const rua    = document.getElementById("rua").value.trim();
+  const cidade = document.getElementById("cidade").value.trim();
+  const estado = document.getElementById("estado").value.trim();
+  const comp   = document.getElementById("complemento").value.trim();
 
-  const nome    = document.getElementById("nome").value.trim();
-  const tel     = document.getElementById("telefone").value.trim();
-  const cep     = document.getElementById("cep").value.trim();
-  const rua     = document.getElementById("rua").value.trim();
-  const cidade  = document.getElementById("cidade").value.trim();
-  const comp    = document.getElementById("complemento").value.trim();
+  if (!nome)                  { alert("Informe seu nome.");             return; }
+  if (!cep || !rua || !cidade){ alert("Preencha o endereço completo."); return; }
 
-  if (!nome)            { alert("Por favor, informe seu nome."); return; }
-  if (!cep || !rua || !cidade) { alert("Por favor, preencha o endereço completo."); return; }
+  const itensTexto = carrinho.map((item, i) =>
+    `${i+1}. ${item.produto.nome} (${item.produto.liga}) — Tam. ${item.tamanho} — ${item.qtd}x — R$ ${item.produto.preco * item.qtd}`
+  ).join("\n");
 
-  const total = estado.selecionado.preco * estado.qtd;
+  const totalGeral = carrinho.reduce((s, i) => s + i.produto.preco * i.qtd, 0);
 
   const msg =
 `🛍️ *NOVO PEDIDO — ${NOME_LOJA}*
 
 ━━━━━━━━━━━━━━━━━━━━
-🎽 *PRODUTO*
-Camisa: ${estado.selecionado.nome} (${estado.selecionado.liga})
-Tamanho: ${estado.tamanho}
-Quantidade: ${estado.qtd}x
-*Total: R$ ${total}*
+🎽 *PRODUTOS*
+${itensTexto}
+
+*Total: R$ ${totalGeral}*
 
 ━━━━━━━━━━━━━━━━━━━━
 👤 *CLIENTE*
@@ -394,7 +297,7 @@ Nome: ${nome}${tel ? "\nTelefone: " + tel : ""}
 ━━━━━━━━━━━━━━━━━━━━
 📦 *ENDEREÇO DE ENTREGA*
 ${rua}${comp ? ", " + comp : ""}
-${cidade}
+${cidade}${estado ? " / " + estado : ""}
 CEP: ${cep}
 ━━━━━━━━━━━━━━━━━━━━
 
@@ -406,5 +309,17 @@ Aguardo as instruções de pagamento! 🙏`;
 /* ── INIT ── */
 document.addEventListener("DOMContentLoaded", () => {
   renderCatalog();
-  atualizarResumo();
+  atualizarContadorHeader();
+
+  /* fechar modal clicando fora */
+  document.getElementById("modal").addEventListener("click", e => {
+    if (e.target === document.getElementById("modal")) fecharModal();
+  });
+
+  /* fechar drawers pelo overlay */
+  document.getElementById("cart-overlay").addEventListener("click", () => {
+    fecharCarrinho();
+    fecharCheckout();
+    fecharModal();
+  });
 });
