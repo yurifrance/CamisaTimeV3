@@ -8,7 +8,7 @@
    ══════════════════════════════════════════════════════════════ */
 
 const WHATSAPP = "351932144202"; /* ✏️ seu número com DDI+DDD */
-const NOME_LOJA = "PacMan Ruivo Store";   /* ✏️ nome da sua loja       */
+const NOME_LOJA = "PacMan Ruivo";   /* ✏️ nome da sua loja       */
 
 
 /* ══════════════════════════════════════════════════════════════
