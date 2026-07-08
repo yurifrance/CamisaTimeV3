@@ -21,12 +21,12 @@ const NOME_LOJA = "PacMan Ruivo";   /* ✏️ nome da sua loja       */
 const PRODUTOS = [
 
   /* ── BRASILEIROS ── */
-  { id:13, nome:"Santos",          liga:"Brasileirão",          cat:"brasileiro", img:"imagens/flamengo.jpeg",          emoji:"🔴", preco:35 },
-  { id:14, nome:"Corinthians",       liga:"Brasileirão",          cat:"brasileiro", img:"imagens/corinthians.jpeg",       emoji:"⚫", preco:35 },
-  { id:15, nome:"Palmeiras",         liga:"Brasileirão",          cat:"brasileiro", img:"imagens/palmeiras.jpeg",         emoji:"💚", preco:35 },
-  { id:16, nome:"São Paulo",         liga:"Brasileirão",          cat:"brasileiro", img:"imagens/sao-paulo.jpeg",         emoji:"🔺", preco:35 },
-  { id:17, nome:"Grêmio",            liga:"Brasileirão",          cat:"brasileiro", img:"imagens/gremio.jpeg",            emoji:"💙", preco:35 },
-  { id:18, nome:"Vasco" ,          liga:"Brasileirão",          cat:"brasileiro", img:"imagens/cruzeiro.jpeg",          emoji:"🌟", preco:35 },
+  { id:13, nome:"Santos",          liga:"Brasileirão",          cat:"brasileiro", img:"imagens/santos.jpg",          emoji:"🔴", preco:35 },
+  { id:14, nome:"Corinthians",       liga:"Brasileirão",          cat:"brasileiro", img:"imagens/corinthians.jpg",       emoji:"⚫", preco:35 },
+  { id:15, nome:"Palmeiras",         liga:"Brasileirão",          cat:"brasileiro", img:"imagens/palmeiras.jpg",         emoji:"💚", preco:35 },
+  { id:16, nome:"São Paulo",         liga:"Brasileirão",          cat:"brasileiro", img:"imagens/saopaulo.jpg",         emoji:"🔺", preco:35 },
+  { id:17, nome:"Grêmio",            liga:"Brasileirão",          cat:"brasileiro", img:"imagens/gremio.jpg",            emoji:"💙", preco:35 },
+  { id:18, nome:"Vasco" ,          liga:"Brasileirão",          cat:"brasileiro", img:"imagens/vasco.jpeg",          emoji:"🌟", preco:35 },
 
 
   /* ── SELEÇÕES ── */
