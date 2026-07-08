@@ -7,8 +7,8 @@
    ✏️  CONFIGURAÇÕES — EDITE AQUI
    ══════════════════════════════════════════════════════════════ */
 
-const WHATSAPP = "5511999999999"; /* ✏️ seu número com DDI+DDD */
-const NOME_LOJA = "CanisStore";   /* ✏️ nome da sua loja       */
+const WHATSAPP = "351932144202"; /* ✏️ seu número com DDI+DDD */
+const NOME_LOJA = "PacMan Ruivo Store";   /* ✏️ nome da sua loja       */
 
 
 /* ══════════════════════════════════════════════════════════════
@@ -20,37 +20,40 @@ const NOME_LOJA = "CanisStore";   /* ✏️ nome da sua loja       */
    ══════════════════════════════════════════════════════════════ */
 const PRODUTOS = [
 
+  /* ── BRASILEIROS ── */
+  { id:13, nome:"Santos",          liga:"Brasileirão",          cat:"brasileiro", img:"imagens/flamengo.jpeg",          emoji:"🔴", preco:35 },
+  { id:14, nome:"Corinthians",       liga:"Brasileirão",          cat:"brasileiro", img:"imagens/corinthians.jpeg",       emoji:"⚫", preco:35 },
+  { id:15, nome:"Palmeiras",         liga:"Brasileirão",          cat:"brasileiro", img:"imagens/palmeiras.jpeg",         emoji:"💚", preco:35 },
+  { id:16, nome:"São Paulo",         liga:"Brasileirão",          cat:"brasileiro", img:"imagens/sao-paulo.jpeg",         emoji:"🔺", preco:35 },
+  { id:17, nome:"Grêmio",            liga:"Brasileirão",          cat:"brasileiro", img:"imagens/gremio.jpeg",            emoji:"💙", preco:35 },
+  { id:18, nome:"Vasco",          liga:"Brasileirão",          cat:"brasileiro", img:"imagens/cruzeiro.jpeg",          emoji:"🌟", preco:35 },
+
+
   /* ── SELEÇÕES ── */
-  { id:1,  nome:"Brasil",            liga:"Seleção Brasileira",   cat:"selecao",    img:"imagens/brasil.jpeg",            emoji:"🇧🇷", preco:149 },
-  { id:2,  nome:"Argentina",         liga:"Seleção Argentina",    cat:"selecao",    img:"imagens/argentina.jpeg",         emoji:"🇦🇷", preco:149 },
-  { id:3,  nome:"Portugal",          liga:"Seleção Portuguesa",   cat:"selecao",    img:"imagens/portugal.jpeg",          emoji:"🇵🇹", preco:149 },
-  { id:4,  nome:"França",            liga:"Seleção Francesa",     cat:"selecao",    img:"imagens/franca.jpeg",            emoji:"🇫🇷", preco:149 },
-  { id:5,  nome:"Alemanha",          liga:"Seleção Alemã",        cat:"selecao",    img:"imagens/alemanha.jpeg",          emoji:"🇩🇪", preco:149 },
-  { id:6,  nome:"Espanha",           liga:"Seleção Espanhola",    cat:"selecao",    img:"imagens/espanha.jpeg",           emoji:"🇪🇸", preco:149 },
+  { id:1,  nome:"Brasil",            liga:"Seleção Brasileira",   cat:"selecao",    img:"imagens/brasil.jpeg",            emoji:"🇧🇷", preco:35 },
+  { id:2,  nome:"Argentina",         liga:"Seleção Argentina",    cat:"selecao",    img:"imagens/argentina.jpeg",         emoji:"🇦🇷", preco:35 },
+  { id:3,  nome:"Portugal",          liga:"Seleção Portuguesa",   cat:"selecao",    img:"imagens/portugal.jpeg",          emoji:"🇵🇹", preco:35 },
+  { id:4,  nome:"França",            liga:"Seleção Francesa",     cat:"selecao",    img:"imagens/franca.jpeg",            emoji:"🇫🇷", preco:35 },
+  { id:5,  nome:"Alemanha",          liga:"Seleção Alemã",        cat:"selecao",    img:"imagens/alemanha.jpeg",          emoji:"🇩🇪", preco:35 },
+  { id:6,  nome:"Espanha",           liga:"Seleção Espanhola",    cat:"selecao",    img:"imagens/espanha.jpeg",           emoji:"🇪🇸", preco:35},
 
   /* ── EUROPEUS ── */
-  { id:7,  nome:"Real Madrid",       liga:"La Liga",              cat:"europeu",    img:"imagens/real-madrid.jpeg",       emoji:"⚪", preco:159 },
-  { id:8,  nome:"Barcelona",         liga:"La Liga",              cat:"europeu",    img:"imagens/barcelona.jpeg",         emoji:"🔵", preco:159 },
-  { id:9,  nome:"Manchester United", liga:"Premier League",       cat:"europeu",    img:"imagens/manchester-united.jpeg", emoji:"🔴", preco:159 },
-  { id:10, nome:"Manchester City",   liga:"Premier League",       cat:"europeu",    img:"imagens/manchester-city.jpeg",   emoji:"🩵", preco:159 },
-  { id:11, nome:"PSG",               liga:"Ligue 1",              cat:"europeu",    img:"imagens/psg.jpeg",               emoji:"🗼", preco:159 },
-  { id:12, nome:"Juventus",          liga:"Serie A",              cat:"europeu",    img:"imagens/juventus.jpeg",          emoji:"⚫", preco:159 },
+  { id:7,  nome:"Real Madrid",       liga:"La Liga",              cat:"europeu",    img:"imagens/real-madrid.jpeg",       emoji:"⚪", preco:35 },
+  { id:8,  nome:"Barcelona",         liga:"La Liga",              cat:"europeu",    img:"imagens/barcelona.jpeg",         emoji:"🔵", preco:35 },
+  { id:9,  nome:"Manchester United", liga:"Premier League",       cat:"europeu",    img:"imagens/manchester-united.jpeg", emoji:"🔴", preco:35 },
+  { id:10, nome:"Manchester City",   liga:"Premier League",       cat:"europeu",    img:"imagens/manchester-city.jpeg",   emoji:"🩵", preco:35 },
+  { id:11, nome:"PSG",               liga:"Ligue 1",              cat:"europeu",    img:"imagens/psg.jpeg",               emoji:"🗼", preco:35 },
+  { id:12, nome:"Juventus",          liga:"Serie A",              cat:"europeu",    img:"imagens/juventus.jpeg",          emoji:"⚫", preco:35 },
 
-  /* ── BRASILEIROS ── */
-  { id:13, nome:"Flamengo",          liga:"Brasileirão",          cat:"brasileiro", img:"imagens/flamengo.jpeg",          emoji:"🔴", preco:139 },
-  { id:14, nome:"Corinthians",       liga:"Brasileirão",          cat:"brasileiro", img:"imagens/corinthians.jpeg",       emoji:"⚫", preco:139 },
-  { id:15, nome:"Palmeiras",         liga:"Brasileirão",          cat:"brasileiro", img:"imagens/palmeiras.jpeg",         emoji:"💚", preco:139 },
-  { id:16, nome:"São Paulo",         liga:"Brasileirão",          cat:"brasileiro", img:"imagens/sao-paulo.jpeg",         emoji:"🔺", preco:139 },
-  { id:17, nome:"Grêmio",            liga:"Brasileirão",          cat:"brasileiro", img:"imagens/gremio.jpeg",            emoji:"💙", preco:139 },
-  { id:18, nome:"Cruzeiro",          liga:"Brasileirão",          cat:"brasileiro", img:"imagens/cruzeiro.jpeg",          emoji:"🌟", preco:139 },
-
+  
   /* ── RETRÔ ── */
-  { id:19, nome:"Brasil 1970",       liga:"Retrô — Seleção",      cat:"retro",      img:"imagens/brasil-1970.jpeg",       emoji:"🏆", preco:169 },
-  { id:20, nome:"Brasil 1994",       liga:"Retrô — Seleção",      cat:"retro",      img:"imagens/brasil-1994.jpeg",       emoji:"🥇", preco:169 },
-  { id:21, nome:"Italia 1982",       liga:"Retrô — Seleção",      cat:"retro",      img:"imagens/italia-1982.jpeg",       emoji:"🇮🇹", preco:169 },
-  { id:22, nome:"Argentina 1986",    liga:"Retrô — Seleção",      cat:"retro",      img:"imagens/argentina-1986.jpeg",    emoji:"⭐", preco:169 },
-  { id:23, nome:"Ajax 1995",         liga:"Retrô — Clube",        cat:"retro",      img:"imagens/ajax-1995.jpeg",         emoji:"🏴", preco:169 },
-  { id:24, nome:"Barcelona 1999",    liga:"Retrô — Clube",        cat:"retro",      img:"imagens/barcelona-1999.jpeg",    emoji:"🏅", preco:169 },
+  { id:19, nome:"Brasil 1970",       liga:"Retrô — Seleção",      cat:"retro",      img:"imagens/brasil-1970.jpeg",       emoji:"🏆", preco:35 },
+  { id:20, nome:"Brasil 1994",       liga:"Retrô — Seleção",      cat:"retro",      img:"imagens/brasil-1994.jpeg",       emoji:"🥇", preco:35},
+  { id:21, nome:"Italia 1982",       liga:"Retrô — Seleção",      cat:"retro",      img:"imagens/italia-1982.jpeg",       emoji:"🇮🇹", preco:35 },
+  { id:22, nome:"Argentina 1986",    liga:"Retrô — Seleção",      cat:"retro",      img:"imagens/argentina-1986.jpeg",    emoji:"⭐", preco:35 },
+  { id:23, nome:"Ajax 1995",         liga:"Retrô — Clube",        cat:"retro",      img:"imagens/ajax-1995.jpeg",         emoji:"🏴", preco:35 },
+  { id:24, nome:"Barcelona 1999",    liga:"Retrô — Clube",        cat:"retro",      img:"imagens/barcelona-1999.jpeg",    emoji:"🏅", preco:353
+   },
 ];
 
 
@@ -89,7 +92,7 @@ function renderCatalog() {
         <div class="shirt-img">${imgContent}</div>
         <div class="shirt-name">${p.nome}</div>
         <div class="shirt-league">${p.liga}</div>
-        <div class="shirt-price">R$ ${p.preco}</div>
+        <div class="shirt-price">€ ${p.preco}</div>
         <button class="add-btn">${noCart ? '+ Adicionar novamente' : '+ Adicionar ao carrinho'}</button>
       </div>`;
   }).join("");
