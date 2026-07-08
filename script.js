@@ -26,7 +26,7 @@ const PRODUTOS = [
   { id:15, nome:"Palmeiras",         liga:"Brasileirão",          cat:"brasileiro", img:"imagens/palmeiras.jpeg",         emoji:"💚", preco:35 },
   { id:16, nome:"São Paulo",         liga:"Brasileirão",          cat:"brasileiro", img:"imagens/sao-paulo.jpeg",         emoji:"🔺", preco:35 },
   { id:17, nome:"Grêmio",            liga:"Brasileirão",          cat:"brasileiro", img:"imagens/gremio.jpeg",            emoji:"💙", preco:35 },
-  { id:18, nome:"Vasco",          liga:"Brasileirão",          cat:"brasileiro", img:"imagens/cruzeiro.jpeg",          emoji:"🌟", preco:35 },
+  { id:18, nome:"Vasco" ,          liga:"Brasileirão",          cat:"brasileiro", img:"imagens/cruzeiro.jpeg",          emoji:"🌟", preco:35 },
 
 
   /* ── SELEÇÕES ── */
