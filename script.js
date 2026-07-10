@@ -8,7 +8,7 @@
    ══════════════════════════════════════════════════════════════ */
 
 const WHATSAPP = "351932144202"; /* ✏️ seu número com DDI+DDD */
-const NOME_LOJA = "PacMan Ruivo";   /* ✏️ nome da sua loja       */
+const NOME_LOJA = "comeback";   /* ✏️ nome da sua loja       */
 
 
 /* ══════════════════════════════════════════════════════════════
@@ -222,7 +222,7 @@ function renderCarrinho() {
         <div class="cart-item-info">
           <div class="cart-item-nome">${item.produto.nome}</div>
           <div class="cart-item-sub">${item.produto.liga} · Tam. ${item.tamanho}</div>
-          <div class="cart-item-preco">R$ ${item.produto.preco * item.qtd}</div>
+          <div class="cart-item-preco"> € ${item.produto.preco * item.qtd}</div>
         </div>
         <div class="cart-item-actions">
           <div class="cart-qty-row">
@@ -291,7 +291,7 @@ function enviarWhatsApp() {
 🎽 *PRODUTOS*
 ${itensTexto}
 
-*Total: R$ ${totalGeral}*
+*Total: € ${totalGeral}*
 
 ━━━━━━━━━━━━━━━━━━━━
 👤 *CLIENTE*
