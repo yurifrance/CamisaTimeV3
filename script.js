@@ -27,13 +27,15 @@ const PRODUTOS = [
   { id:16, nome:"São Paulo",         liga:"Brasileirão",          cat:"brasileiro", img:"imagens/saopaulo.jpg",         emoji:"🔺", preco:35 },
   { id:17, nome:"Grêmio",            liga:"Brasileirão",          cat:"brasileiro", img:"imagens/gremio.jpg",            emoji:"💙", preco:35 },
   { id:18, nome:"Vasco" ,          liga:"Brasileirão",          cat:"brasileiro", img:"imagens/vasco.jpeg",          emoji:"🌟", preco:35 },
-
-
+  {id: 25, nome:"Bahia",           liga:"Brasileirão,",         cat:"brasileiro", img:"imagens/bahu.jpg",          emoji:"🌟", preco:35},
+  {id: 26, nome:"Fluminense",           liga:"Brasileirão,",         cat:"brasileiro", img:"imagens/fluminense.jpg",          emoji:"🌟", preco:35},
+{id: 27, nome:"Flamengo",           liga:"Brasileirão,",         cat:"brasileiro", img:"imagens/flamengo.jpg",          emoji:"🌟", preco:35},
+{id: 28, nome:"Corinthians",           liga:"Brasileirão,",         cat:"brasileiro", img:"imagens/corinthians2.jpg",          emoji:"🌟", preco:35},
   /* ── SELEÇÕES ── */
-  { id:1,  nome:"Brasil",            liga:"Seleção Brasileira",   cat:"selecao",    img:"imagens/brasil.jpeg",            emoji:"🇧🇷", preco:35 },
-  { id:2,  nome:"Argentina",         liga:"Seleção Argentina",    cat:"selecao",    img:"imagens/argentina.jpeg",         emoji:"🇦🇷", preco:35 },
+  { id:1,  nome:"Brasil Retro",            liga:"Seleção Brasileira",   cat:"selecao",    img:"imagens/brasilretro.jpg",            emoji:"🇧🇷", preco:35 },
+  { id:2,  nome:"Argentina",         liga:"Seleção Argentina",    cat:"selecao",    img:"imagens/argentina.jpg",         emoji:"🇦🇷", preco:35 },
   { id:3,  nome:"Portugal",          liga:"Seleção Portuguesa",   cat:"selecao",    img:"imagens/portugal.jpeg",          emoji:"🇵🇹", preco:35 },
-  { id:4,  nome:"França",            liga:"Seleção Francesa",     cat:"selecao",    img:"imagens/franca.jpeg",            emoji:"🇫🇷", preco:35 },
+  { id:4,  nome:"Portugal Black",            liga:"Seleção Portuguesa",     cat:"selecao",    img:"imagens/portugalblack.jpg",            emoji:"🇫🇷", preco:35 },
   { id:5,  nome:"Alemanha",          liga:"Seleção Alemã",        cat:"selecao",    img:"imagens/alemanha.jpeg",          emoji:"🇩🇪", preco:35 },
   { id:6,  nome:"Espanha",           liga:"Seleção Espanhola",    cat:"selecao",    img:"imagens/espanha.jpeg",           emoji:"🇪🇸", preco:35},
 
