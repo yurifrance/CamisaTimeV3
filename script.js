@@ -28,24 +28,25 @@ const PRODUTOS = [
   { id:17, nome:"Grêmio",            liga:"Brasileirão",          cat:"brasileiro", img:"imagens/gremio.jpg",            emoji:"💙", preco:35 },
   { id:18, nome:"Vasco" ,          liga:"Brasileirão",          cat:"brasileiro", img:"imagens/vasco.jpeg",          emoji:"🌟", preco:35 },
   {id: 25, nome:"Bahia",           liga:"Brasileirão,",         cat:"brasileiro", img:"imagens/bahu.jpg",          emoji:"🌟", preco:35},
-  {id: 26, nome:"Fluminense",           liga:"Brasileirão,",         cat:"brasileiro", img:"imagens/fluminense.jpg",          emoji:"🌟", preco:35},
-{id: 27, nome:"Flamengo",           liga:"Brasileirão,",         cat:"brasileiro", img:"imagens/flamengo.jpg",          emoji:"🌟", preco:35},
-{id: 28, nome:"Corinthians",           liga:"Brasileirão,",         cat:"brasileiro", img:"imagens/corinthians2.jpg",          emoji:"🌟", preco:35},
+  {id: 26, nome:"Fluminense",           liga:"Brasileirão",         cat:"brasileiro", img:"imagens/fluminense.jpg",          emoji:"🌟", preco:35},
+{id: 27, nome:"Flamengo",           liga:"Brasileirão",         cat:"brasileiro", img:"imagens/flamengo.jpg",          emoji:"🌟", preco:35},
+{id: 28, nome:"Corinthians",           liga:"Brasileirão",         cat:"brasileiro", img:"imagens/corinthians2.jpg",          emoji:"🌟", preco:35},
   /* ── SELEÇÕES ── */
-  { id:1,  nome:"Brasil Retro",            liga:"Seleção Brasileira",   cat:"selecao",    img:"imagens/brasilretro.jpg",            emoji:"🇧🇷", preco:35 },
+  { id:1,  nome:"Brasil Retro",            liga:"Seleção Brasileira",   cat:"retro",    img:"imagens/brasilretro.jpg",            emoji:"🇧🇷", preco:35 },
   { id:2,  nome:"Argentina",         liga:"Seleção Argentina",    cat:"selecao",    img:"imagens/argentina.jpg",         emoji:"🇦🇷", preco:35 },
-  { id:3,  nome:"Portugal",          liga:"Seleção Portuguesa",   cat:"selecao",    img:"imagens/portugal.jpeg",          emoji:"🇵🇹", preco:35 },
+  { id:3,  nome:"Portugal",          liga:"Seleção Portuguesa",   cat:"selecao",    img:"imagens/portugal.jpg",          emoji:"🇵🇹", preco:35 },
   { id:4,  nome:"Portugal Black",            liga:"Seleção Portuguesa",     cat:"selecao",    img:"imagens/portugalblack.jpg",            emoji:"🇫🇷", preco:35 },
-  { id:5,  nome:"Alemanha",          liga:"Seleção Alemã",        cat:"selecao",    img:"imagens/alemanha.jpeg",          emoji:"🇩🇪", preco:35 },
-  { id:6,  nome:"Espanha",           liga:"Seleção Espanhola",    cat:"selecao",    img:"imagens/espanha.jpeg",           emoji:"🇪🇸", preco:35},
+  { id:5,  nome:"Alemanha",          liga:"Seleção Alemã",        cat:"selecao",    img:"imagens/alemanha.jpg",          emoji:"🇩🇪", preco:35 },
+  { id:6,  nome:"Espanha",           liga:"Seleção Espanhola",    cat:"selecao",    img:"imagens/espanha.jpg",           emoji:"🇪🇸", preco:35},
+  { id:29,  nome:"Japão",           liga:"Seleção Japonesa",    cat:"selecao",    img:"imagens/japao.jpg",           emoji:"🇪🇸", preco:35},
 
   /* ── EUROPEUS ── */
-  { id:7,  nome:"Real Madrid",       liga:"La Liga",              cat:"europeu",    img:"imagens/real-madrid.jpeg",       emoji:"⚪", preco:35 },
+  { id:7,  nome:"Real Madrid 2017 CR7",       liga:"La Liga",              cat:"europeu",    img:"imagens/realmadridCR72017.jpg",       emoji:"⚪", preco:35 },
   { id:8,  nome:"Barcelona",         liga:"La Liga",              cat:"europeu",    img:"imagens/barcelona.jpeg",         emoji:"🔵", preco:35 },
   { id:9,  nome:"Manchester United", liga:"Premier League",       cat:"europeu",    img:"imagens/manchester-united.jpeg", emoji:"🔴", preco:35 },
   { id:10, nome:"Manchester City",   liga:"Premier League",       cat:"europeu",    img:"imagens/manchester-city.jpeg",   emoji:"🩵", preco:35 },
   { id:11, nome:"PSG",               liga:"Ligue 1",              cat:"europeu",    img:"imagens/psg.jpeg",               emoji:"🗼", preco:35 },
-  { id:12, nome:"Juventus",          liga:"Serie A",              cat:"europeu",    img:"imagens/juventus.jpeg",          emoji:"⚫", preco:35 },
+  { id:12, nome:"Milan",          liga:"Serie A",              cat:"europeu",    img:"imagens/milankaka.jpg",          emoji:"⚫", preco:35 },
 
   
   /* ── RETRÔ ── */
@@ -124,7 +125,7 @@ function abrirModal(id) {
   document.getElementById("modal-img").innerHTML = imgContent;
   document.getElementById("modal-nome").textContent = modalProduto.nome;
   document.getElementById("modal-liga").textContent = modalProduto.liga;
-  document.getElementById("modal-preco").textContent = `R$ ${modalProduto.preco}`;
+  document.getElementById("modal-preco").textContent = `€ ${modalProduto.preco}`;
   document.getElementById("modal-qty-num").textContent = 1;
 
   document.querySelectorAll(".modal-size-btn").forEach(b => b.classList.remove("active"));
@@ -281,7 +282,7 @@ function enviarWhatsApp() {
   if (!cep || !rua || !cidade){ alert("Preencha o endereço completo."); return; }
 
   const itensTexto = carrinho.map((item, i) =>
-    `${i+1}. ${item.produto.nome} (${item.produto.liga}) — Tam. ${item.tamanho} — ${item.qtd}x — R$ ${item.produto.preco * item.qtd}`
+    `${i+1}. ${item.produto.nome} (${item.produto.liga}) — Tam. ${item.tamanho} — ${item.qtd}x — € ${item.produto.preco * item.qtd}`
   ).join("\n");
 
   const totalGeral = carrinho.reduce((s, i) => s + i.produto.preco * i.qtd, 0);
