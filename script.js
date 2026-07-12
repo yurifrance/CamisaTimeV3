@@ -60,7 +60,7 @@ const PRODUTOS = [
   { id:20, nome:"Brasil 1994",       liga:"Retrô — Seleção",      cat:"retro",      img:"imagens/brasil-1994.jpeg",       emoji:"🥇", preco:35},
   { id:21, nome:"Italia 1982",       liga:"Retrô — Seleção",      cat:"retro",      img:"imagens/italia-1982.jpeg",       emoji:"🇮🇹", preco:35 },*/
   { id:22, nome:"Manchester United Retro Beckham",    liga:"Retrô — Clube",      cat:"retro",      img:"imagens/retrobeckmanchester.jpg",    emoji:"⭐", preco:38 },
-  { id:23, nome:"Palmeiras Parmalat",         liga:"Retrô — Clube",        cat:"retro",      img:"imagens/palretro.jpg",         emoji:"🏴", preco:39 },
+  { id:23, nome:"Palmeiras Parmalat Retro",         liga:"Retrô — Clube",        cat:"retro",      img:"imagens/palretro.jpg",         emoji:"🏴", preco:39 },
   { id:24, nome:"Barcelona retro",    liga:"Retrô — Clube",        cat:"retro",      img:"imagens/barcaretro.jpg",    emoji:"🏅", preco:39
    },
 ];
