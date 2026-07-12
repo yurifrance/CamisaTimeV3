@@ -33,7 +33,7 @@ const PRODUTOS = [
 {id: 28, nome:"Corinthians",           liga:"Brasileirão",         cat:"brasileiro", img:"imagens/corinthians2.jpg",          emoji:"🌟", preco:35},
 {id: 30, nome:"Atlético-MG",           liga:"Brasileirão",         cat:"brasileiro", img:"imagens/galo.jpg",          emoji:"🌟", preco:35},
 {id: 31, nome:"Cruzeiro",           liga:"Brasileirão",         cat:"brasileiro", img:"imagens/cru.jpg",          emoji:"🌟", preco:35},
-{id: 32, nome:"Internacional AllBlack",           liga:"Brasileirão",         cat:"brasileiro", img:"imagens/inter.jpg",          emoji:"🌟", preco:35},
+{id: 32, nome:"Internacional AllBlack",           liga:"Brasileirão",         cat:"brasileiro", img:"imagens/interblack.jpg",          emoji:"🌟", preco:35},
 
   /* ── SELEÇÕES ── */
   { id:1,  nome:"Brasil Retro",            liga:"Retrô Brasileira",   cat:"retro",    img:"imagens/brasilretro.jpg",            emoji:"🇧🇷", preco:35 },
