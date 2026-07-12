@@ -31,31 +31,37 @@ const PRODUTOS = [
   {id: 26, nome:"Fluminense",           liga:"Brasileirão",         cat:"brasileiro", img:"imagens/fluminense.jpg",          emoji:"🌟", preco:35},
 {id: 27, nome:"Flamengo",           liga:"Brasileirão",         cat:"brasileiro", img:"imagens/flamengo.jpg",          emoji:"🌟", preco:35},
 {id: 28, nome:"Corinthians",           liga:"Brasileirão",         cat:"brasileiro", img:"imagens/corinthians2.jpg",          emoji:"🌟", preco:35},
+{id: 30, nome:"Atlético-MG",           liga:"Brasileirão",         cat:"brasileiro", img:"imagens/galo.jpg",          emoji:"🌟", preco:35},
+{id: 31, nome:"Cruzeiro",           liga:"Brasileirão",         cat:"brasileiro", img:"imagens/cru.jpg",          emoji:"🌟", preco:35},
+{id: 32, nome:"Internacional AllBlack",           liga:"Brasileirão",         cat:"brasileiro", img:"imagens/inter.jpg",          emoji:"🌟", preco:35},
+
   /* ── SELEÇÕES ── */
-  { id:1,  nome:"Brasil Retro",            liga:"Seleção Brasileira",   cat:"retro",    img:"imagens/brasilretro.jpg",            emoji:"🇧🇷", preco:35 },
+  { id:1,  nome:"Brasil Retro",            liga:"Retrô Brasileira",   cat:"retro",    img:"imagens/brasilretro.jpg",            emoji:"🇧🇷", preco:35 },
   { id:2,  nome:"Argentina",         liga:"Seleção Argentina",    cat:"selecao",    img:"imagens/argentina.jpg",         emoji:"🇦🇷", preco:35 },
   { id:3,  nome:"Portugal",          liga:"Seleção Portuguesa",   cat:"selecao",    img:"imagens/portugal.jpg",          emoji:"🇵🇹", preco:35 },
   { id:4,  nome:"Portugal Black",            liga:"Seleção Portuguesa",     cat:"selecao",    img:"imagens/portugalblack.jpg",            emoji:"🇫🇷", preco:35 },
   { id:5,  nome:"Alemanha",          liga:"Seleção Alemã",        cat:"selecao",    img:"imagens/alemanha.jpg",          emoji:"🇩🇪", preco:35 },
   { id:6,  nome:"Espanha",           liga:"Seleção Espanhola",    cat:"selecao",    img:"imagens/espanha.jpg",           emoji:"🇪🇸", preco:35},
   { id:29,  nome:"Japão",           liga:"Seleção Japonesa",    cat:"selecao",    img:"imagens/japao.jpg",           emoji:"🇪🇸", preco:35},
+  { id:33,  nome:"Colombia",           liga:"Seleção Colombiana",    cat:"selecao",    img:"imagens/colombia.jpg",           emoji:"🇪🇸", preco:35},
+  { id:34,  nome:"Brasil",           liga:"Seleção Brasileira",    cat:"selecao",    img:"imagens/brasil1.jpg",           emoji:"🇪🇸", preco:35},
 
   /* ── EUROPEUS ── */
-  { id:7,  nome:"Real Madrid 2017 CR7",       liga:"La Liga",              cat:"europeu",    img:"imagens/realmadridCR72017.jpg",       emoji:"⚪", preco:35 },
-  { id:8,  nome:"Barcelona",         liga:"La Liga",              cat:"europeu",    img:"imagens/barcelona.jpeg",         emoji:"🔵", preco:35 },
-  { id:9,  nome:"Manchester United", liga:"Premier League",       cat:"europeu",    img:"imagens/manchester-united.jpeg", emoji:"🔴", preco:35 },
-  { id:10, nome:"Manchester City",   liga:"Premier League",       cat:"europeu",    img:"imagens/manchester-city.jpeg",   emoji:"🩵", preco:35 },
-  { id:11, nome:"PSG",               liga:"Ligue 1",              cat:"europeu",    img:"imagens/psg.jpeg",               emoji:"🗼", preco:35 },
-  { id:12, nome:"Milan",          liga:"Serie A",              cat:"europeu",    img:"imagens/milankaka.jpg",          emoji:"⚫", preco:35 },
+  { id:7,  nome:"Real Madrid 2017 CR7",       liga:"La Liga",              cat:"retro",    img:"imagens/realmadridCR72017.jpg",       emoji:"⚪", preco:37 },
+  { id:8,  nome:"Bayern Kane",         liga:"Bundesliga",              cat:"europeu",    img:"imagens/bayernkane.jpg",         emoji:"🔵", preco:35 },
+  { id:9,  nome:"Miami Messi", liga:"EUA",       cat:"europeu",    img:"imagens/miamimessi.jpg", emoji:"🔴", preco:37 },
+  /*{ id:10, nome:"Manchester City",   liga:"Premier League",       cat:"europeu",    img:"imagens/manchester-city.jpeg",   emoji:"🩵", preco:35 },*/
+  /*{ id:11, nome:"PSG",               liga:"Ligue 1",              cat:"europeu",    img:"imagens/psg.jpeg",               emoji:"🗼", preco:35 },*/
+  { id:12, nome:"Milan",          liga:"Serie A",              cat:"retro",    img:"imagens/milankaka.jpg",          emoji:"⚫", preco:38 },
 
   
   /* ── RETRÔ ── */
-  { id:19, nome:"Brasil 1970",       liga:"Retrô — Seleção",      cat:"retro",      img:"imagens/brasil-1970.jpeg",       emoji:"🏆", preco:35 },
+  /*{ id:19, nome:"Brasil 1970",       liga:"Retrô — Seleção",      cat:"retro",      img:"imagens/brasil-1970.jpeg",       emoji:"🏆", preco:35 },
   { id:20, nome:"Brasil 1994",       liga:"Retrô — Seleção",      cat:"retro",      img:"imagens/brasil-1994.jpeg",       emoji:"🥇", preco:35},
-  { id:21, nome:"Italia 1982",       liga:"Retrô — Seleção",      cat:"retro",      img:"imagens/italia-1982.jpeg",       emoji:"🇮🇹", preco:35 },
-  { id:22, nome:"Argentina 1986",    liga:"Retrô — Seleção",      cat:"retro",      img:"imagens/argentina-1986.jpeg",    emoji:"⭐", preco:35 },
-  { id:23, nome:"Ajax 1995",         liga:"Retrô — Clube",        cat:"retro",      img:"imagens/ajax-1995.jpeg",         emoji:"🏴", preco:35 },
-  { id:24, nome:"Barcelona 1999",    liga:"Retrô — Clube",        cat:"retro",      img:"imagens/barcelona-1999.jpeg",    emoji:"🏅", preco:353
+  { id:21, nome:"Italia 1982",       liga:"Retrô — Seleção",      cat:"retro",      img:"imagens/italia-1982.jpeg",       emoji:"🇮🇹", preco:35 },*/
+  { id:22, nome:"Manchester United Retro Beckham",    liga:"Retrô — Clube",      cat:"retro",      img:"imagens/retrobeckmanchester.jpg",    emoji:"⭐", preco:38 },
+  { id:23, nome:"Palmeiras Parmalat",         liga:"Retrô — Clube",        cat:"retro",      img:"imagens/palretro.jpg",         emoji:"🏴", preco:39 },
+  { id:24, nome:"Barcelona retro",    liga:"Retrô — Clube",        cat:"retro",      img:"imagens/barcaretro.jpg",    emoji:"🏅", preco:39
    },
 ];
 
@@ -241,7 +247,7 @@ function renderCarrinho() {
   resumoEl.innerHTML = `
     <div class="cart-total-line">
       <span>${carrinho.reduce((s,i) => s+i.qtd, 0)} item(s)</span>
-      <span>R$ ${totalGeral}</span>
+      <span> € ${totalGeral}</span>
     </div>`;
   resumoEl.style.display = "block";
   btnFinalizar.style.display = "block";
