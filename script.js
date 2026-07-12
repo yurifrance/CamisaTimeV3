@@ -174,13 +174,13 @@ const DEPOIMENTOS = [
     texto: "Camisa chegou perfeita, qualidade incrível! Já fiz o segundo pedido."
   },
   {
-    img: "clientebrasil.jpeg",
+    img: "imagens/clientebrasil.jpeg",
     nome: "Ana Rodrigues",
     local: "Porto, PT",
     texto: "Demorou 12 dias, qualidade top."
   },
   {
-    img: "clientesantos.jpeg",
+    img: "imagens/clientesantos.jpeg",
     nome: "Carlos Thiago G.",
     local: "Braga, PT",
     texto: "muito bom"
