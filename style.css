@@ -610,7 +610,7 @@ footer a { color: #25D366; }
 ════════════════════════════════════════════════════════════ */
 .hero {
   position: relative;
-  background-image: url("imagens/capa.png"); /* ✏️ caminho da imagem de fundo */
+  background-image: url("imagens/capa2.png"); /* ✏️ caminho da imagem de fundo */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

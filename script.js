@@ -81,7 +81,7 @@ const PRODUTOS = [
   },
   {
     id: 32, nome: "Internacional AllBlack", liga: "Brasileirão", cat: "brasileiro", preco: 35, emoji: "⚫",
-    imgs: ["imagens/interblack.jpg"]
+    imgs: ["imagens/interblack.jpg", "imagens/inter2.jpeg", "imagens/inter3.jpeg"]
   },
 
   /* ── SELEÇÕES ── */
@@ -119,7 +119,7 @@ const PRODUTOS = [
   },
   {
     id: 34, nome: "Brasil", liga: "Seleção Brasileira", cat: "selecao", preco: 35, emoji: "🇧🇷",
-    imgs: ["imagens/brasil1.jpg"]
+    imgs: ["imagens/brasil1.jpg","imagens/brasil3.jpeg"]
   },
 
   /* ── EUROPEUS ── */
@@ -169,27 +169,27 @@ const PRODUTOS = [
 const DEPOIMENTOS = [
   {
     img: "",              /* ✏️ ex: "clientes/cliente1.jpg" */
-    nome: "João Silva",
-    local: "Lisboa, PT",
+    nome: "Alex",
+    local: "Braga, PT",
     texto: "Camisa chegou perfeita, qualidade incrível! Já fiz o segundo pedido."
   },
   {
-    img: "",
+    img: "clientebrasil.jpeg",
     nome: "Ana Rodrigues",
     local: "Porto, PT",
-    texto: "Super rápido e embalado com cuidado. Recomendo a todos os fãs!"
+    texto: "Demorou 12 dias, qualidade top."
   },
   {
-    img: "",
-    nome: "Carlos Mendes",
+    img: "clientesantos.jpeg",
+    nome: "Carlos Thiago G.",
     local: "Braga, PT",
-    texto: "Comprei a retro do Barcelona e ficou igual à da foto. Sensacional!"
+    texto: "muito bom"
   },
   {
     img: "",              /* ✏️ adicione mais depoimentos copiando este bloco */
-    nome: "Mariana Costa",
-    local: "Faro, PT",
-    texto: "Atendimento via WhatsApp muito atencioso. Produto chegou em ótimo estado."
+    nome: "Marina M Silva",
+    local: "Braga, PT",
+    texto: "Atendimento via WhatsApp muito atencioso."
   },
 ];
 
@@ -611,7 +611,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* pop-up após 10 segundos */
   /* ✏️ mude 10000 para alterar o tempo de espera (em milissegundos) */
-  setTimeout(mostrarPopup, 10000);
+  setTimeout(mostrarPopup, 100000);
 
   /* fechar modal clicando fora */
   document.getElementById("modal").addEventListener("click", e => {
