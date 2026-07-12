@@ -17,18 +17,28 @@
     </button>
   </header>
 
-  <!-- ── HERO ── -->
+
+  <!-- ════════════════════════════════════════════════════════
+       ALTERAÇÃO 1: BANNER HERO COM IMAGEM DE FUNDO
+       ✏️ A imagem "imagens/capa.png" é usada como fundo.
+          Para trocar, edite a linha background-image no style.css
+          procurando por ".hero" e alterando o caminho da imagem.
+  ════════════════════════════════════════════════════════════ -->
   <section class="hero">
-    <div class="hero-badge">⚽ Seleções · Europeus · Brasileiros · Retrô</div>
-    <h1>Camisas de time<br><em>do seu jeito</em></h1> <!-- ✏️ título -->
-    <p>As melhores camisas nacionais e internacionais, entregues direto na sua porta.</p>
-    <div class="hero-pills">
-      <div class="pill">🚚 Frete rastreado</div>
-      <div class="pill">💳 MB WAY, PIX ou transferência</div>
-      <div class="pill">🔒 Compra segura</div>
-      <div class="pill">📦 Prazo: 5 a 35 dias</div>
+    <div class="hero-overlay"></div> <!-- escurecimento sobre a imagem -->
+    <div class="hero-content">
+      <div class="hero-badge">⚽ Seleções · Europeus · Brasileiros · Retrô</div>
+      <h1>Camisas de time<br><em>do seu jeito</em></h1>
+      <p>As melhores camisas nacionais e internacionais, entregues direto na sua porta.</p>
+      <div class="hero-pills">
+        <div class="pill">🚚 Frete rastreado</div>
+        <div class="pill">💳 MB WAY, PIX ou transferência</div>
+        <div class="pill">🔒 Compra segura</div>
+        <div class="pill">📦 Prazo: 5 a 35 dias</div>
+      </div>
     </div>
   </section>
+
 
   <!-- ── INFO BAR ── -->
   <div class="info-bar">
@@ -36,6 +46,7 @@
     <div class="info-item">🏆 Seleções e grandes clubes</div>
     <div class="info-item">📲 Pedido pelo WhatsApp</div>
   </div>
+
 
   <!-- ── CATÁLOGO ── -->
   <div class="main">
@@ -51,37 +62,94 @@
     <div class="catalog" id="catalog"></div>
   </div>
 
+
+  <!-- ════════════════════════════════════════════════════════
+       ALTERAÇÃO 4: RODAPÉ COM DEPOIMENTOS EM CARROSSEL
+       ✏️ Os depoimentos são editados no script.js,
+          no array DEPOIMENTOS no topo do arquivo.
+          Para adicionar fotos dos clientes, coloque-as em
+          uma pasta "clientes/" e aponte o caminho no campo "img".
+  ════════════════════════════════════════════════════════════ -->
+  <section class="depoimentos">
+    <div class="depo-header">
+      <h2>O que nossos clientes dizem</h2>
+      <p>Relatos reais de quem já comprou conosco</p>
+    </div>
+    <div class="depo-carrossel">
+      <button class="depo-arrow depo-arrow-left" onclick="mudarDepo(-1)">&#8249;</button>
+      <div class="depo-track" id="depo-track"></div>
+      <button class="depo-arrow depo-arrow-right" onclick="mudarDepo(1)">&#8250;</button>
+    </div>
+    <div class="depo-dots" id="depo-dots"></div>
+  </section>
+
+
   <!-- ── FOOTER ── -->
   <footer>
-    <p>© 2026 <strong>PacMan Ruivo Store</strong> — Camisas de time pra quem é fiel</p> <!-- ✏️ -->
+    <p>© 2026 <strong>ComClubismo</strong> — Camisas de time pra quem é fiel</p>
     <p style="margin-top:6px;">Dúvidas? <a href="https://wa.me/351932144202" target="_blank">Fale no WhatsApp</a></p>
   </footer>
 
 
-  <!-- ════════════════════════════════════════════
-       OVERLAY (fundo escuro dos modais)
-  ════════════════════════════════════════════ -->
+  <!-- ════════════════════════════════════════════════════════
+       OVERLAY (fundo escuro dos modais e drawers)
+  ════════════════════════════════════════════════════════════ -->
   <div class="overlay" id="cart-overlay"></div>
 
 
-  <!-- ════════════════════════════════════════════
-       MODAL — escolher tamanho e quantidade
-  ════════════════════════════════════════════ -->
+  <!-- ════════════════════════════════════════════════════════
+       ALTERAÇÃO 2: POP-UP AUTOMÁTICO (aparece após 10s)
+       ✏️ Edite o texto aqui mesmo no HTML abaixo.
+          O botão chama irParaWhatsAppPopup() no script.js
+          onde você pode editar a mensagem pré-preenchida.
+  ════════════════════════════════════════════════════════════ -->
+  <div class="popup-overlay" id="popup-promo">
+    <div class="popup-box">
+      <button class="popup-close" onclick="fecharPopup()">✕</button>
+      <div class="popup-icon">👕</div>
+      <!-- ✏️ Edite o título do pop-up -->
+      <h3 class="popup-titulo">Não encontrou o que procura?</h3>
+      <!-- ✏️ Edite o texto do pop-up -->
+      <p class="popup-texto">
+        Se não encontrou o clube ou o modelo que deseja, entre em contato via WhatsApp —
+        temos <strong>vários outros modelos exclusivos</strong> que não estão no catálogo!
+      </p>
+      <!-- ✏️ Edite o texto do botão -->
+      <button class="popup-btn-whats" onclick="irParaWhatsAppPopup()">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+          <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.122 1.524 5.855L0 24l6.335-1.54A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-5.007-1.375l-.36-.214-3.73.978.994-3.633-.235-.374A9.795 9.795 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/>
+        </svg>
+        Falar no WhatsApp sobre modelos exclusivos
+      </button>
+    </div>
+  </div>
+
+
+  <!-- ════════════════════════════════════════════════════════
+       ALTERAÇÃO 3: MODAL COM CARROSSEL DE IMAGENS
+       O carrossel é gerado automaticamente pelo script.js.
+       Para adicionar fotos a um produto, edite o array "imgs"
+       de cada produto no script.js.
+  ════════════════════════════════════════════════════════════ -->
   <div class="modal" id="modal">
     <div class="modal-box">
       <button class="modal-close" onclick="fecharModal()">✕</button>
-      <div class="modal-img" id="modal-img"></div>
+
+      <!-- carrossel renderizado pelo JS -->
+      <div id="modal-carrossel"></div>
+
       <div class="modal-nome" id="modal-nome"></div>
       <div class="modal-liga" id="modal-liga"></div>
       <div class="modal-preco" id="modal-preco"></div>
 
       <div class="modal-label">Tamanho</div>
       <div class="modal-sizes">
-        <button class="modal-size-btn" onclick="modalEscolherTamanho('P', this)">P</button>
+        <button class="modal-size-btn" onclick="modalEscolherTamanho('S', this)">S</button>
         <button class="modal-size-btn" onclick="modalEscolherTamanho('M', this)">M</button>
-        <button class="modal-size-btn" onclick="modalEscolherTamanho('G', this)">G</button>
-        <button class="modal-size-btn" onclick="modalEscolherTamanho('GG', this)">GG</button>
-        <button class="modal-size-btn" onclick="modalEscolherTamanho('XGG', this)">XGG</button>
+        <button class="modal-size-btn" onclick="modalEscolherTamanho('L', this)">L</button>
+        <button class="modal-size-btn" onclick="modalEscolherTamanho('XL', this)">XL</button>
+        <button class="modal-size-btn" onclick="modalEscolherTamanho('XXL', this)">XXL</button>
       </div>
 
       <div class="modal-label">Quantidade</div>
@@ -96,9 +164,7 @@
   </div>
 
 
-  <!-- ════════════════════════════════════════════
-       DRAWER — CARRINHO
-  ════════════════════════════════════════════ -->
+  <!-- ── DRAWER CARRINHO ── -->
   <div class="drawer" id="cart-drawer">
     <div class="drawer-header">
       <span>🛒 Seu carrinho</span>
@@ -110,16 +176,14 @@
     </div>
     <div class="drawer-footer">
       <button class="btn-finalizar" id="btn-finalizar" onclick="abrirCheckout()" style="display:none;">
-        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.122 1.524 5.855L0 24l6.335-1.54A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-5.007-1.375l-.36-.214-3.73.978.994-3.633-.235-.374A9.795 9.795 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.122 1.524 5.855L0 24l6.335-1.54A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-5.007-1.375l-.36-.214-3.73.978.994-3.633-.235-.374A9.795 9.795 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
         Finalizar pedido
       </button>
     </div>
   </div>
 
 
-  <!-- ════════════════════════════════════════════
-       DRAWER — CHECKOUT (dados de entrega)
-  ════════════════════════════════════════════ -->
+  <!-- ── DRAWER CHECKOUT ── -->
   <div class="checkout-drawer" id="checkout-drawer">
     <div class="drawer-header">
       <span>📦 Dados de entrega</span>
@@ -135,15 +199,15 @@
       </div>
       <div class="field">
         <label>WhatsApp / Telefone</label>
-        <input type="text" id="telefone" placeholder="(11) 99999-9999">
+        <input type="text" id="telefone" placeholder="+351 912 345 678">
       </div>
 
       <div class="section-divider"></div>
       <div class="section-title-small">Endereço de entrega</div>
 
       <div class="field">
-        <label>CODIGO POSTAL</label>
-        <input type="text" id="cep" placeholder="00000-000">
+        <label>Código Postal</label>
+        <input type="text" id="cep" placeholder="0000-000">
       </div>
       <div class="field">
         <label>Rua e número</label>
@@ -152,11 +216,11 @@
       <div class="field field-row">
         <div>
           <label>Cidade</label>
-          <input type="text" id="cidade" placeholder="Londres">
+          <input type="text" id="cidade" placeholder="Lisboa">
         </div>
         <div>
-          <label>Estado</label>
-          <input type="text" id="estado" placeholder="Braga">
+          <label>Distrito</label>
+          <input type="text" id="estado" placeholder="Lisboa">
         </div>
       </div>
       <div class="field">
@@ -167,10 +231,10 @@
       <div class="section-divider"></div>
 
       <button class="whatsapp-btn" onclick="enviarWhatsApp()">
-        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.122 1.524 5.855L0 24l6.335-1.54A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-5.007-1.375l-.36-.214-3.73.978.994-3.633-.235-.374A9.795 9.795 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.122 1.524 5.855L0 24l6.335-1.54A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.8 9.8 0 01-5.007-1.375l-.36-.214-3.73.978.994-3.633-.235-.374A9.795 9.795 0 012.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
         Enviar pedido pelo WhatsApp
       </button>
-      <p class="disclaimer">Você será direcionado ao WhatsApp com todos os itens do seu pedido para confirmar e receber as instruções de pagamento via PIX.</p>
+      <p class="disclaimer">Você será direcionado ao WhatsApp com todos os itens do seu pedido para confirmar e receber as instruções de pagamento.</p>
     </div>
   </div>
 
