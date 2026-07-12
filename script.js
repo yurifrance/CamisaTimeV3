@@ -7,62 +7,190 @@
    ✏️  CONFIGURAÇÕES — EDITE AQUI
    ══════════════════════════════════════════════════════════════ */
 
-const WHATSAPP = "351932144202"; /* ✏️ seu número com DDI+DDD */
-const NOME_LOJA = "comeback";   /* ✏️ nome da sua loja       */
+const WHATSAPP  = "351932144202"; /* ✏️ seu número com DDI+DDD */
+const NOME_LOJA = "ComClubismo";  /* ✏️ nome da sua loja       */
 
 
 /* ══════════════════════════════════════════════════════════════
    ✏️  PRODUTOS — EDITE AQUI
    ══════════════════════════════════════════════════════════════
-   - img:   caminho da imagem (ex: "imagens/brasil.jpeg")
-            deixe "" para usar o emoji como substituto
-   - cat:   "selecao" | "europeu" | "brasileiro" | "retro"
+   NOVIDADE: cada produto agora tem "imgs" (array de 1 a 5 imagens)
+   no lugar de "img". Exemplos:
+
+   Uma imagem:
+     imgs: ["imagens/brasil.jpg"]
+
+   Várias imagens (carrossel):
+     imgs: ["imagens/brasil-1.jpg", "imagens/brasil-2.jpg", "imagens/brasil-3.jpg"]
+
+   Sem imagem (usa emoji):
+     imgs: []
+
+   - cat: "selecao" | "europeu" | "brasileiro" | "retro"
    ══════════════════════════════════════════════════════════════ */
 const PRODUTOS = [
 
   /* ── BRASILEIROS ── */
-  { id:13, nome:"Santos",          liga:"Brasileirão",          cat:"brasileiro", img:"imagens/santos.jpg",          emoji:"🔴", preco:35 },
-  { id:14, nome:"Corinthians",       liga:"Brasileirão",          cat:"brasileiro", img:"imagens/corinthians.jpg",       emoji:"⚫", preco:35 },
-  { id:15, nome:"Palmeiras",         liga:"Brasileirão",          cat:"brasileiro", img:"imagens/palmeiras.jpg",         emoji:"💚", preco:35 },
-  { id:16, nome:"São Paulo",         liga:"Brasileirão",          cat:"brasileiro", img:"imagens/saopaulo.jpg",         emoji:"🔺", preco:35 },
-  { id:17, nome:"Grêmio",            liga:"Brasileirão",          cat:"brasileiro", img:"imagens/gremio.jpg",            emoji:"💙", preco:35 },
-  { id:18, nome:"Vasco" ,          liga:"Brasileirão",          cat:"brasileiro", img:"imagens/vasco.jpeg",          emoji:"🌟", preco:35 },
-  {id: 25, nome:"Bahia",           liga:"Brasileirão,",         cat:"brasileiro", img:"imagens/bahu.jpg",          emoji:"🌟", preco:35},
-  {id: 26, nome:"Fluminense",           liga:"Brasileirão",         cat:"brasileiro", img:"imagens/fluminense.jpg",          emoji:"🌟", preco:35},
-{id: 27, nome:"Flamengo",           liga:"Brasileirão",         cat:"brasileiro", img:"imagens/flamengo.jpg",          emoji:"🌟", preco:35},
-{id: 28, nome:"Corinthians",           liga:"Brasileirão",         cat:"brasileiro", img:"imagens/corinthians2.jpg",          emoji:"🌟", preco:35},
-{id: 30, nome:"Atlético-MG",           liga:"Brasileirão",         cat:"brasileiro", img:"imagens/galo.jpg",          emoji:"🌟", preco:35},
-{id: 31, nome:"Cruzeiro",           liga:"Brasileirão",         cat:"brasileiro", img:"imagens/cru.jpg",          emoji:"🌟", preco:35},
-{id: 32, nome:"Internacional AllBlack",           liga:"Brasileirão",         cat:"brasileiro", img:"imagens/interblack.jpg",          emoji:"🌟", preco:35},
+  {
+    id: 13, nome: "Santos", liga: "Brasileirão", cat: "brasileiro", preco: 35, emoji: "⚫",
+    imgs: ["imagens/santos.jpg"] /* ✏️ adicione mais imagens: ["imagens/santos.jpg","imagens/santos-2.jpg"] */
+  },
+  {
+    id: 14, nome: "Corinthians", liga: "Brasileirão", cat: "brasileiro", preco: 35, emoji: "⚫",
+    imgs: ["imagens/corinthians.jpg"]
+  },
+  {
+    id: 15, nome: "Palmeiras", liga: "Brasileirão", cat: "brasileiro", preco: 35, emoji: "💚",
+    imgs: ["imagens/palmeiras.jpg"]
+  },
+  {
+    id: 16, nome: "São Paulo", liga: "Brasileirão", cat: "brasileiro", preco: 35, emoji: "🔺",
+    imgs: ["imagens/saopaulo.jpg"]
+  },
+  {
+    id: 17, nome: "Grêmio", liga: "Brasileirão", cat: "brasileiro", preco: 35, emoji: "💙",
+    imgs: ["imagens/gremio.jpg"]
+  },
+  {
+    id: 18, nome: "Vasco", liga: "Brasileirão", cat: "brasileiro", preco: 35, emoji: "⚫",
+    imgs: ["imagens/vasco.jpeg"]
+  },
+  {
+    id: 25, nome: "Bahia", liga: "Brasileirão", cat: "brasileiro", preco: 35, emoji: "🔵",
+    imgs: ["imagens/bahu.jpg"]
+  },
+  {
+    id: 26, nome: "Fluminense", liga: "Brasileirão", cat: "brasileiro", preco: 35, emoji: "🔴",
+    imgs: ["imagens/fluminense.jpg"]
+  },
+  {
+    id: 27, nome: "Flamengo", liga: "Brasileirão", cat: "brasileiro", preco: 35, emoji: "🔴",
+    imgs: ["imagens/flamengo.jpg"]
+  },
+  {
+    id: 28, nome: "Corinthians", liga: "Brasileirão", cat: "brasileiro", preco: 35, emoji: "⚫",
+    imgs: ["imagens/corinthians2.jpg"]
+  },
+  {
+    id: 30, nome: "Atlético-MG", liga: "Brasileirão", cat: "brasileiro", preco: 35, emoji: "⚫",
+    imgs: ["imagens/galo.jpg"]
+  },
+  {
+    id: 31, nome: "Cruzeiro", liga: "Brasileirão", cat: "brasileiro", preco: 35, emoji: "💙",
+    imgs: ["imagens/cru.jpg"]
+  },
+  {
+    id: 32, nome: "Internacional AllBlack", liga: "Brasileirão", cat: "brasileiro", preco: 35, emoji: "⚫",
+    imgs: ["imagens/interblack.jpg"]
+  },
 
   /* ── SELEÇÕES ── */
-  { id:1,  nome:"Brasil Retro",            liga:"Retrô Brasileira",   cat:"retro",    img:"imagens/brasilretro.jpg",            emoji:"🇧🇷", preco:35 },
-  { id:2,  nome:"Argentina",         liga:"Seleção Argentina",    cat:"selecao",    img:"imagens/argentina.jpg",         emoji:"🇦🇷", preco:35 },
-  { id:3,  nome:"Portugal",          liga:"Seleção Portuguesa",   cat:"selecao",    img:"imagens/portugal.jpg",          emoji:"🇵🇹", preco:35 },
-  { id:4,  nome:"Portugal Black",            liga:"Seleção Portuguesa",     cat:"selecao",    img:"imagens/portugalblack.jpg",            emoji:"🇫🇷", preco:35 },
-  { id:5,  nome:"Alemanha",          liga:"Seleção Alemã",        cat:"selecao",    img:"imagens/alemanha.jpg",          emoji:"🇩🇪", preco:35 },
-  { id:6,  nome:"Espanha",           liga:"Seleção Espanhola",    cat:"selecao",    img:"imagens/espanha.jpg",           emoji:"🇪🇸", preco:35},
-  { id:29,  nome:"Japão",           liga:"Seleção Japonesa",    cat:"selecao",    img:"imagens/japao.jpg",           emoji:"🇪🇸", preco:35},
-  { id:33,  nome:"Colombia",           liga:"Seleção Colombiana",    cat:"selecao",    img:"imagens/colombia.jpg",           emoji:"🇪🇸", preco:35},
-  { id:34,  nome:"Brasil",           liga:"Seleção Brasileira",    cat:"selecao",    img:"imagens/brasil1.jpg",           emoji:"🇪🇸", preco:35},
+  {
+    id: 1, nome: "Brasil Retro", liga: "Retrô Brasileira", cat: "retro", preco: 35, emoji: "🇧🇷",
+    imgs: ["imagens/brasilretro.jpg"]
+  },
+  {
+    id: 2, nome: "Argentina", liga: "Seleção Argentina", cat: "selecao", preco: 35, emoji: "🇦🇷",
+    imgs: ["imagens/argentina.jpg"]
+  },
+  {
+    id: 3, nome: "Portugal", liga: "Seleção Portuguesa", cat: "selecao", preco: 35, emoji: "🇵🇹",
+    imgs: ["imagens/portugal.jpg"]
+  },
+  {
+    id: 4, nome: "Portugal Black", liga: "Seleção Portuguesa", cat: "selecao", preco: 35, emoji: "🇵🇹",
+    imgs: ["imagens/portugalblack.jpg"]
+  },
+  {
+    id: 5, nome: "Alemanha", liga: "Seleção Alemã", cat: "selecao", preco: 35, emoji: "🇩🇪",
+    imgs: ["imagens/alemanha.jpg"]
+  },
+  {
+    id: 6, nome: "Espanha", liga: "Seleção Espanhola", cat: "selecao", preco: 35, emoji: "🇪🇸",
+    imgs: ["imagens/espanha.jpg"]
+  },
+  {
+    id: 29, nome: "Japão", liga: "Seleção Japonesa", cat: "selecao", preco: 35, emoji: "🇯🇵",
+    imgs: ["imagens/japao.jpg"]
+  },
+  {
+    id: 33, nome: "Colombia", liga: "Seleção Colombiana", cat: "selecao", preco: 35, emoji: "🇨🇴",
+    imgs: ["imagens/colombia.jpg"]
+  },
+  {
+    id: 34, nome: "Brasil", liga: "Seleção Brasileira", cat: "selecao", preco: 35, emoji: "🇧🇷",
+    imgs: ["imagens/brasil1.jpg"]
+  },
 
   /* ── EUROPEUS ── */
-  { id:7,  nome:"Real Madrid 2017 CR7",       liga:"La Liga",              cat:"retro",    img:"imagens/realmadridCR72017.jpg",       emoji:"⚪", preco:37 },
-  { id:8,  nome:"Bayern Kane",         liga:"Bundesliga",              cat:"europeu",    img:"imagens/bayernkane.jpg",         emoji:"🔵", preco:35 },
-  { id:9,  nome:"Miami Messi", liga:"EUA",       cat:"europeu",    img:"imagens/miamimessi.jpg", emoji:"🔴", preco:37 },
-  /*{ id:10, nome:"Manchester City",   liga:"Premier League",       cat:"europeu",    img:"imagens/manchester-city.jpeg",   emoji:"🩵", preco:35 },*/
-  /*{ id:11, nome:"PSG",               liga:"Ligue 1",              cat:"europeu",    img:"imagens/psg.jpeg",               emoji:"🗼", preco:35 },*/
-  { id:12, nome:"Milan",          liga:"Serie A",              cat:"retro",    img:"imagens/milankaka.jpg",          emoji:"⚫", preco:38 },
+  {
+    id: 7, nome: "Real Madrid 2017 CR7", liga: "La Liga", cat: "retro", preco: 37, emoji: "⚪",
+    imgs: ["imagens/realmadridCR72017.jpg"]
+  },
+  {
+    id: 8, nome: "Bayern Kane", liga: "Bundesliga", cat: "europeu", preco: 35, emoji: "🔴",
+    imgs: ["imagens/bayernkane.jpg"]
+  },
+  {
+    id: 9, nome: "Miami Messi", liga: "EUA", cat: "europeu", preco: 37, emoji: "🩷",
+    imgs: ["imagens/miamimessi.jpg"]
+  },
+  {
+    id: 12, nome: "Milan", liga: "Serie A", cat: "retro", preco: 38, emoji: "⚫",
+    imgs: ["imagens/milankaka.jpg"]
+  },
 
-  
   /* ── RETRÔ ── */
-  /*{ id:19, nome:"Brasil 1970",       liga:"Retrô — Seleção",      cat:"retro",      img:"imagens/brasil-1970.jpeg",       emoji:"🏆", preco:35 },
-  { id:20, nome:"Brasil 1994",       liga:"Retrô — Seleção",      cat:"retro",      img:"imagens/brasil-1994.jpeg",       emoji:"🥇", preco:35},
-  { id:21, nome:"Italia 1982",       liga:"Retrô — Seleção",      cat:"retro",      img:"imagens/italia-1982.jpeg",       emoji:"🇮🇹", preco:35 },*/
-  { id:22, nome:"Manchester United Retro Beckham",    liga:"Retrô — Clube",      cat:"retro",      img:"imagens/retrobeckmanchester.jpg",    emoji:"⭐", preco:38 },
-  { id:23, nome:"Palmeiras Parmalat Retro",         liga:"Retrô — Clube",        cat:"retro",      img:"imagens/palretro.jpg",         emoji:"🏴", preco:39 },
-  { id:24, nome:"Barcelona retro",    liga:"Retrô — Clube",        cat:"retro",      img:"imagens/barcaretro.jpg",    emoji:"🏅", preco:39
-   },
+  {
+    id: 22, nome: "Manchester United Retro Beckham", liga: "Retrô — Clube", cat: "retro", preco: 38, emoji: "🔴",
+    imgs: ["imagens/retrobeckmanchester.jpg"]
+  },
+  {
+    id: 23, nome: "Palmeiras Parmalat Retro", liga: "Retrô — Clube", cat: "retro", preco: 39, emoji: "💚",
+    imgs: ["imagens/palretro.jpg"]
+  },
+  {
+    id: 24, nome: "Barcelona retro", liga: "Retrô — Clube", cat: "retro", preco: 39, emoji: "🔵",
+    imgs: ["imagens/barcaretro.jpg"]
+  },
+];
+
+
+/* ══════════════════════════════════════════════════════════════
+   ✏️  DEPOIMENTOS — EDITE AQUI (alteração 4: rodapé carrossel)
+   ══════════════════════════════════════════════════════════════
+   Adicione até quantos depoimentos quiser.
+   - img:   caminho da foto do cliente (ex: "clientes/joao.jpg")
+             deixe "" para usar apenas o avatar com a inicial do nome
+   - nome:  nome do cliente
+   - local: cidade ou país
+   - texto: o que o cliente escreveu
+   ══════════════════════════════════════════════════════════════ */
+const DEPOIMENTOS = [
+  {
+    img: "",              /* ✏️ ex: "clientes/cliente1.jpg" */
+    nome: "João Silva",
+    local: "Lisboa, PT",
+    texto: "Camisa chegou perfeita, qualidade incrível! Já fiz o segundo pedido."
+  },
+  {
+    img: "",
+    nome: "Ana Rodrigues",
+    local: "Porto, PT",
+    texto: "Super rápido e embalado com cuidado. Recomendo a todos os fãs!"
+  },
+  {
+    img: "",
+    nome: "Carlos Mendes",
+    local: "Braga, PT",
+    texto: "Comprei a retro do Barcelona e ficou igual à da foto. Sensacional!"
+  },
+  {
+    img: "",              /* ✏️ adicione mais depoimentos copiando este bloco */
+    nome: "Mariana Costa",
+    local: "Faro, PT",
+    texto: "Atendimento via WhatsApp muito atencioso. Produto chegou em ótimo estado."
+  },
 ];
 
 
@@ -70,14 +198,29 @@ const PRODUTOS = [
    LÓGICA — não precisa editar abaixo
    ══════════════════════════════════════════════════════════════ */
 
-/* ── ESTADO ── */
-let filtroAtivo = "todos";
-let carrinho = []; /* [ { produto, tamanho, qtd } ] */
-
-/* ── MODAL ── */
+let filtroAtivo  = "todos";
+let carrinho     = [];
 let modalProduto = null;
 let modalTamanho = null;
-let modalQtd = 1;
+let modalQtd     = 1;
+let modalSlide   = 0; /* índice da imagem atual no carrossel do modal */
+
+/* ── helper: primeira imagem ou null ── */
+function primeiraImg(p) {
+  return p.imgs && p.imgs.length > 0 ? p.imgs[0] : null;
+}
+
+/* ── helper: gera html de imagem com fallback emoji ── */
+function imgHtml(src, alt, emoji, extraCss = "") {
+  if (src) {
+    return `<img src="${src}" alt="${alt}" style="${extraCss}"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+            <span style="display:none;font-size:2.5rem;width:100%;height:100%;
+                         align-items:center;justify-content:center;">${emoji}</span>`;
+  }
+  return `<span style="font-size:2.5rem;">${emoji}</span>`;
+}
+
 
 /* ────────────────────────────────
    CATÁLOGO
@@ -89,16 +232,13 @@ function renderCatalog() {
 
   document.getElementById("catalog").innerHTML = lista.map(p => {
     const noCart = carrinho.some(i => i.produto.id === p.id);
-    const imgContent = p.img
-      ? `<img src="${p.img}" alt="${p.nome}"
-             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-         <span style="display:none;font-size:2.5rem;width:100%;height:100%;align-items:center;justify-content:center;">${p.emoji}</span>`
-      : `<span style="font-size:2.5rem;">${p.emoji}</span>`;
-
+    const src    = primeiraImg(p);
+    const temVarias = p.imgs && p.imgs.length > 1;
     return `
       <div class="shirt-card ${noCart ? 'in-cart' : ''}" onclick="abrirModal(${p.id})">
         ${noCart ? '<div class="in-cart-badge">✓ No carrinho</div>' : ''}
-        <div class="shirt-img">${imgContent}</div>
+        ${temVarias ? '<div class="multi-img-badge">📷 ' + p.imgs.length + ' fotos</div>' : ''}
+        <div class="shirt-img">${imgHtml(src, p.nome, p.emoji)}</div>
         <div class="shirt-name">${p.nome}</div>
         <div class="shirt-league">${p.liga}</div>
         <div class="shirt-price">€ ${p.preco}</div>
@@ -114,30 +254,85 @@ function filtrar(cat, btn) {
   renderCatalog();
 }
 
-/* ────────────────────────────────
-   MODAL — selecionar tamanho/qtd
-──────────────────────────────── */
+
+/* ────────────────────────────────────────────────────────────
+   ALTERAÇÃO 3: MODAL COM CARROSSEL DE IMAGENS
+   O modal agora exibe um carrossel com setas e miniaturas.
+   As funções mudarSlide() e irParaSlide() controlam a navegação.
+──────────────────────────────────────────────────────────── */
 function abrirModal(id) {
   modalProduto = PRODUTOS.find(p => p.id === id);
   modalTamanho = null;
-  modalQtd = 1;
+  modalQtd     = 1;
+  modalSlide   = 0;
 
-  const imgContent = modalProduto.img
-    ? `<img src="${modalProduto.img}" alt="${modalProduto.nome}"
-           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-       <span style="display:none;font-size:3rem;align-items:center;justify-content:center;width:100%;height:100%;">${modalProduto.emoji}</span>`
-    : `<span style="font-size:3rem;">${modalProduto.emoji}</span>`;
-
-  document.getElementById("modal-img").innerHTML = imgContent;
-  document.getElementById("modal-nome").textContent = modalProduto.nome;
-  document.getElementById("modal-liga").textContent = modalProduto.liga;
-  document.getElementById("modal-preco").textContent = `€ ${modalProduto.preco}`;
+  document.getElementById("modal-nome").textContent    = modalProduto.nome;
+  document.getElementById("modal-liga").textContent    = modalProduto.liga;
+  document.getElementById("modal-preco").textContent   = `€ ${modalProduto.preco}`;
   document.getElementById("modal-qty-num").textContent = 1;
-
   document.querySelectorAll(".modal-size-btn").forEach(b => b.classList.remove("active"));
+
+  renderCarrossel();
 
   document.getElementById("modal").classList.add("open");
   document.body.style.overflow = "hidden";
+}
+
+/* Renderiza o carrossel de imagens dentro do modal */
+function renderCarrossel() {
+  const p     = modalProduto;
+  const imgs  = p.imgs && p.imgs.length > 0 ? p.imgs : [];
+  const total = imgs.length;
+  const el    = document.getElementById("modal-carrossel");
+
+  /* sem imagens — exibe emoji */
+  if (total === 0) {
+    el.innerHTML = `<div class="carrossel-main"><span style="font-size:4rem;">${p.emoji}</span></div>`;
+    return;
+  }
+
+  const src = imgs[modalSlide];
+
+  /* imagem principal com setas (só aparecem se houver mais de 1 foto) */
+  const setas = total > 1 ? `
+    <button class="carr-btn carr-prev" onclick="mudarSlide(-1)" title="Foto anterior">&#8249;</button>
+    <button class="carr-btn carr-next" onclick="mudarSlide(1)"  title="Próxima foto">&#8250;</button>
+    <div class="carr-counter">${modalSlide + 1} / ${total}</div>` : '';
+
+  /* miniaturas (só se houver mais de 1 foto) */
+  const thumbs = total > 1 ? `
+    <div class="carrossel-thumbs">
+      ${imgs.map((img, i) => `
+        <div class="thumb ${i === modalSlide ? 'active' : ''}" onclick="irParaSlide(${i})">
+          <img src="${img}" alt="foto ${i+1}"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <span style="display:none;font-size:1rem;align-items:center;justify-content:center;
+                       width:100%;height:100%;">${p.emoji}</span>
+        </div>`).join('')}
+    </div>` : '';
+
+  el.innerHTML = `
+    <div class="carrossel-main">
+      <img src="${src}" alt="${p.nome} — foto ${modalSlide + 1}"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <span style="display:none;font-size:4rem;align-items:center;justify-content:center;
+                   width:100%;height:100%;">${p.emoji}</span>
+      ${setas}
+    </div>
+    ${thumbs}`;
+}
+
+/* Avança ou recua no carrossel */
+function mudarSlide(delta) {
+  const total = modalProduto.imgs.length;
+  modalSlide  = (modalSlide + delta + total) % total;
+  renderCarrossel();
+}
+
+/* Vai direto para um slide pelo índice (clique na miniatura) */
+function irParaSlide(idx) {
+  modalSlide = idx;
+  renderCarrossel();
 }
 
 function fecharModal() {
@@ -157,10 +352,7 @@ function modalMudarQtd(delta) {
 }
 
 function adicionarAoCarrinho() {
-  if (!modalTamanho) {
-    alert("Selecione um tamanho.");
-    return;
-  }
+  if (!modalTamanho) { alert("Selecione um tamanho."); return; }
   carrinho.push({ produto: modalProduto, tamanho: modalTamanho, qtd: modalQtd });
   fecharModal();
   renderCatalog();
@@ -168,6 +360,7 @@ function adicionarAoCarrinho() {
   atualizarContadorHeader();
   abrirCarrinho();
 }
+
 
 /* ────────────────────────────────
    DRAWER DO CARRINHO
@@ -205,33 +398,35 @@ function atualizarContadorHeader() {
 }
 
 function renderCarrinho() {
-  const el = document.getElementById("cart-items");
+  const el           = document.getElementById("cart-items");
   const btnFinalizar = document.getElementById("btn-finalizar");
-  const resumoEl = document.getElementById("cart-total-row");
+  const resumoEl     = document.getElementById("cart-total-row");
 
   if (carrinho.length === 0) {
     el.innerHTML = '<div class="cart-empty">Seu carrinho está vazio.<br>Adicione camisas para continuar.</div>';
     btnFinalizar.style.display = "none";
-    resumoEl.style.display = "none";
+    resumoEl.style.display     = "none";
     return;
   }
 
   const totalGeral = carrinho.reduce((s, i) => s + i.produto.preco * i.qtd, 0);
 
   el.innerHTML = carrinho.map((item, idx) => {
-    const imgContent = item.produto.img
-      ? `<img src="${item.produto.img}" alt="${item.produto.nome}"
+    const src = primeiraImg(item.produto);
+    const imgC = src
+      ? `<img src="${src}" alt="${item.produto.nome}"
              onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-         <span style="display:none;font-size:1.5rem;align-items:center;justify-content:center;width:100%;height:100%;">${item.produto.emoji}</span>`
+         <span style="display:none;font-size:1.5rem;align-items:center;justify-content:center;
+                      width:100%;height:100%;">${item.produto.emoji}</span>`
       : `<span style="font-size:1.5rem;">${item.produto.emoji}</span>`;
 
     return `
       <div class="cart-item">
-        <div class="cart-item-img">${imgContent}</div>
+        <div class="cart-item-img">${imgC}</div>
         <div class="cart-item-info">
           <div class="cart-item-nome">${item.produto.nome}</div>
           <div class="cart-item-sub">${item.produto.liga} · Tam. ${item.tamanho}</div>
-          <div class="cart-item-preco"> € ${item.produto.preco * item.qtd}</div>
+          <div class="cart-item-preco">€ ${item.produto.preco * item.qtd}</div>
         </div>
         <div class="cart-item-actions">
           <div class="cart-qty-row">
@@ -247,11 +442,12 @@ function renderCarrinho() {
   resumoEl.innerHTML = `
     <div class="cart-total-line">
       <span>${carrinho.reduce((s,i) => s+i.qtd, 0)} item(s)</span>
-      <span> € ${totalGeral}</span>
+      <span>€ ${totalGeral}</span>
     </div>`;
-  resumoEl.style.display = "block";
+  resumoEl.style.display     = "block";
   btnFinalizar.style.display = "block";
 }
+
 
 /* ────────────────────────────────
    CHECKOUT — DADOS + WHATSAPP
@@ -284,8 +480,8 @@ function enviarWhatsApp() {
   const estado = document.getElementById("estado").value.trim();
   const comp   = document.getElementById("complemento").value.trim();
 
-  if (!nome)                  { alert("Informe seu nome.");             return; }
-  if (!cep || !rua || !cidade){ alert("Preencha o endereço completo."); return; }
+  if (!nome)                   { alert("Informe seu nome.");             return; }
+  if (!cep || !rua || !cidade) { alert("Preencha o endereço completo."); return; }
 
   const itensTexto = carrinho.map((item, i) =>
     `${i+1}. ${item.produto.nome} (${item.produto.liga}) — Tam. ${item.tamanho} — ${item.qtd}x — € ${item.produto.preco * item.qtd}`
@@ -310,7 +506,7 @@ Nome: ${nome}${tel ? "\nTelefone: " + tel : ""}
 📦 *ENDEREÇO DE ENTREGA*
 ${rua}${comp ? ", " + comp : ""}
 ${cidade}${estado ? " / " + estado : ""}
-CEP: ${cep}
+Código Postal: ${cep}
 ━━━━━━━━━━━━━━━━━━━━
 
 Aguardo as instruções de pagamento! 🙏`;
@@ -318,14 +514,113 @@ Aguardo as instruções de pagamento! 🙏`;
   window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`, "_blank");
 }
 
+
+/* ────────────────────────────────────────────────────────────
+   ALTERAÇÃO 2: POP-UP AUTOMÁTICO APÓS 10 SEGUNDOS
+   Aparece uma vez por sessão (sessionStorage evita repetição).
+   ✏️ Edite o texto do pop-up na função mostrarPopup() abaixo,
+      ou mude o tempo em setTimeout (10000 = 10 segundos).
+──────────────────────────────────────────────────────────── */
+function mostrarPopup() {
+  /* não mostra de novo se o usuário já fechou nesta sessão */
+  if (sessionStorage.getItem("popupVisto")) return;
+  document.getElementById("popup-promo").classList.add("open");
+}
+
+function fecharPopup() {
+  document.getElementById("popup-promo").classList.remove("open");
+  sessionStorage.setItem("popupVisto", "1");
+}
+
+function irParaWhatsAppPopup() {
+  /* ✏️ Edite a mensagem pré-preenchida do pop-up aqui */
+  const msg = "Olá! Vi o site e gostaria de saber mais sobre modelos exclusivos que não estão no catálogo. Pode me ajudar?";
+  window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`, "_blank");
+}
+
+
+/* ────────────────────────────────────────────────────────────
+   ALTERAÇÃO 4: CARROSSEL DE DEPOIMENTOS
+   Roda automaticamente a cada 5 segundos.
+   Controles manuais com setas.
+──────────────────────────────────────────────────────────── */
+let depoSlide      = 0;
+let depoTimer      = null;
+const DEPO_INTERVALO = 5000; /* ✏️ tempo em ms entre slides automáticos (5000 = 5s) */
+
+function renderDepoimentos() {
+  const el = document.getElementById("depo-track");
+  if (!el || DEPOIMENTOS.length === 0) return;
+
+  el.innerHTML = DEPOIMENTOS.map((d, i) => {
+    const avatar = d.img
+      ? `<img src="${d.img}" alt="${d.nome}" class="depo-avatar-img"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+         <div class="depo-avatar-inicial" style="display:none;">${d.nome.charAt(0)}</div>`
+      : `<div class="depo-avatar-inicial">${d.nome.charAt(0)}</div>`;
+
+    return `
+      <div class="depo-card ${i === depoSlide ? 'active' : ''}">
+        <div class="depo-stars">★★★★★</div>
+        <p class="depo-texto">"${d.texto}"</p>
+        <div class="depo-autor">
+          <div class="depo-avatar">${avatar}</div>
+          <div>
+            <div class="depo-nome">${d.nome}</div>
+            <div class="depo-local">${d.local}</div>
+          </div>
+        </div>
+      </div>`;
+  }).join("");
+
+  /* dots de navegação */
+  const dots = document.getElementById("depo-dots");
+  if (dots) {
+    dots.innerHTML = DEPOIMENTOS.map((_, i) =>
+      `<button class="depo-dot ${i === depoSlide ? 'active' : ''}" onclick="irParaDepo(${i})"></button>`
+    ).join("");
+  }
+}
+
+function irParaDepo(idx) {
+  depoSlide = idx;
+  renderDepoimentos();
+  reiniciarDepoTimer();
+}
+
+function mudarDepo(delta) {
+  depoSlide = (depoSlide + delta + DEPOIMENTOS.length) % DEPOIMENTOS.length;
+  renderDepoimentos();
+  reiniciarDepoTimer();
+}
+
+function reiniciarDepoTimer() {
+  clearInterval(depoTimer);
+  depoTimer = setInterval(() => mudarDepo(1), DEPO_INTERVALO);
+}
+
+
 /* ── INIT ── */
 document.addEventListener("DOMContentLoaded", () => {
   renderCatalog();
   atualizarContadorHeader();
+  renderDepoimentos();
+
+  /* carrossel de depoimentos automático */
+  reiniciarDepoTimer();
+
+  /* pop-up após 10 segundos */
+  /* ✏️ mude 10000 para alterar o tempo de espera (em milissegundos) */
+  setTimeout(mostrarPopup, 10000);
 
   /* fechar modal clicando fora */
   document.getElementById("modal").addEventListener("click", e => {
     if (e.target === document.getElementById("modal")) fecharModal();
+  });
+
+  /* fechar pop-up clicando fora */
+  document.getElementById("popup-promo").addEventListener("click", e => {
+    if (e.target === document.getElementById("popup-promo")) fecharPopup();
   });
 
   /* fechar drawers pelo overlay */
